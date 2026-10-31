@@ -11,14 +11,25 @@ const CONFIG = {
     },
 
     backgrounds: {
-        cover: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920",
-        hero: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920",
-        quote: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1920",
-        mempelai: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1920",
-        acara: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1920",
-        galeri: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920",
-        amplop: "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1920",
-        rsvp: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1920"
+        // Cover overlay: Motif batik parang / ukiran kayu emas bernuansa gelap
+        cover: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?q=80&w=1920",
+        
+        // Hero section: Ornamen gerbang / pendopo kayu klasik
+        hero: "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1920",
+        
+        // Section quote: Tekstur batik / relief kayu hangat
+        quote: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=1920",
+        
+        // Section mempelai: Background ukiran gebyok Jawa klasik
+        mempelai: "https://images.unsplash.com/photo-1582560469781-1965b9af903d?q=80&w=1920",
+        
+        // Section acara: Nuansa arsitektur pendopo / keraton
+        acara: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1920",
+        
+        // Section galeri & amplop: Tekstur ornamen batik / kayu klasik
+        galeri: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?q=80&w=1920",
+        amplop: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=1920",
+        rsvp: "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1920"
     },
 
     wedding: {
