@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return `https://instagram.com/${cleanHandle}`;
         };
 
-        // Render Profile Mempelai Jawa
+        // Render Profile Mempelai Jawa Dynasty
         const coverHeading = document.getElementById('cover-heading');
         const heroHeading = document.getElementById('hero-heading');
         const profileContainer = document.getElementById('profile-container');
@@ -37,28 +37,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (CONFIG.type === 'wedding' && CONFIG.wedding) {
             const p = CONFIG.wedding.pria;
             const w = CONFIG.wedding.wanita;
-            if (coverHeading) coverHeading.innerHTML = `${p.nama.split(',')[0]} <br>& <br>${w.nama.split(',')[0]}`;
-            if (heroHeading) heroHeading.innerHTML = `${p.nama.split(',')[0]} <br>& <br>${w.nama.split(',')[0]}`;
+            if (coverHeading) coverHeading.innerHTML = `${p.nama.split(',')[0]} <br><span class="text-amber-600 font-serif text-2xl">&</span><br> ${w.nama.split(',')[0]}`;
+            if (heroHeading) heroHeading.innerHTML = `${p.nama.split(',')[0]} <br><span class="text-amber-600 font-serif text-3xl">&</span><br> ${w.nama.split(',')[0]}`;
 
             if (profileContainer) {
                 profileContainer.innerHTML = `
                     <div class="text-center space-y-3 mb-8">
-                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-amber-300">Pasangan Mempelai</h2>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-red-950">Pasangan Mempelai</h2>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="bg-stone-900/80 border border-amber-600/30 p-8 rounded-3xl backdrop-blur-md text-center space-y-4 float-item shadow-2xl">
-                            <img src="${p.foto}" class="w-36 h-36 rounded-full mx-auto object-cover border-2 border-amber-500 shadow-lg">
-                            <h3 class="font-serif text-2xl font-bold text-amber-100">${p.nama}</h3>
-                            <p class="text-xs text-stone-400">${p.orangTua}</p>
-                            <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-400 hover:text-amber-300 transition-colors">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center space-y-4 shadow-md">
+                            <img src="${p.foto}" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-amber-600 shadow-lg">
+                            <h3 class="font-serif text-2xl font-bold text-red-950">${p.nama}</h3>
+                            <p class="text-xs text-stone-600">${p.orangTua}</p>
+                            <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-700 hover:text-amber-900 transition-colors">
                                 <i class="fa-brands fa-instagram"></i><span>${p.instagram}</span>
                             </a>
                         </div>
-                        <div class="bg-stone-900/80 border border-amber-600/30 p-8 rounded-3xl backdrop-blur-md text-center space-y-4 float-item shadow-2xl" style="animation-delay: -2.5s;">
-                            <img src="${w.foto}" class="w-36 h-36 rounded-full mx-auto object-cover border-2 border-amber-500 shadow-lg">
-                            <h3 class="font-serif text-2xl font-bold text-amber-100">${w.nama}</h3>
-                            <p class="text-xs text-stone-400">${w.orangTua}</p>
-                            <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-400 hover:text-amber-300 transition-colors">
+                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center space-y-4 shadow-md">
+                            <img src="${w.foto}" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-amber-600 shadow-lg">
+                            <h3 class="font-serif text-2xl font-bold text-red-950">${w.nama}</h3>
+                            <p class="text-xs text-stone-600">${w.orangTua}</p>
+                            <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-700 hover:text-amber-900 transition-colors">
                                 <i class="fa-brands fa-instagram"></i><span>${w.instagram}</span>
                             </a>
                         </div>
@@ -73,27 +73,27 @@ document.addEventListener('DOMContentLoaded', () => {
             schedContainer.innerHTML = '';
             CONFIG.schedules.forEach(item => {
                 const card = document.createElement('div');
-                card.className = 'bg-stone-900/90 border border-amber-700/40 rounded-2xl overflow-hidden backdrop-blur-md shadow-xl text-center space-y-4 group hover:border-amber-500 transition-all duration-300';
+                card.className = 'bg-amber-50/90 border border-amber-600/30 rounded-2xl overflow-hidden shadow-lg text-center space-y-4 group';
                 card.innerHTML = `
-                    ${item.image ? `<div class="h-44 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-stone-950 to-transparent"></div></div>` : ''}
-                    <div class="p-6 space-y-2">
-                        <h3 class="font-serif text-2xl font-bold text-amber-300">${item.name}</h3>
-                        <p class="text-amber-100 text-sm font-semibold">${item.time}</p>
-                        <p class="text-xs text-stone-400">${item.location}<br>${item.address}</p>
+                    ${item.image ? `<div class="h-40 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>` : ''}
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-serif text-2xl font-bold text-red-950">${item.name}</h3>
+                        <p class="text-amber-800 text-sm font-semibold">${item.time}</p>
+                        <p class="text-xs text-stone-600">${item.location}<br>${item.address}</p>
                     </div>
                 `;
                 schedContainer.appendChild(card);
             });
         }
 
-        // Render Galeri
+        // Render Galeri Foto
         const galleryGrid = document.getElementById('gallery-grid');
         if (galleryGrid && CONFIG.gallery) {
             galleryGrid.innerHTML = '';
             CONFIG.gallery.forEach(url => {
                 const wrap = document.createElement('div');
-                wrap.className = 'overflow-hidden rounded-2xl border border-amber-700/30 shadow-lg group';
-                wrap.innerHTML = `<img src="${url}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">`;
+                wrap.className = 'overflow-hidden rounded-2xl border-2 border-amber-600/40 shadow-md group';
+                wrap.innerHTML = `<img src="${url}" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500">`;
                 galleryGrid.appendChild(wrap);
             });
         }
@@ -104,15 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
             bankContainer.innerHTML = '';
             CONFIG.bankAccounts.forEach((acc, idx) => {
                 const el = document.createElement('div');
-                el.className = 'bg-stone-900/95 border border-amber-600/40 p-6 rounded-2xl backdrop-blur-md space-y-3 flex flex-col items-center justify-center shadow-xl';
+                el.className = 'bg-amber-50/95 border border-amber-600/40 p-5 rounded-2xl space-y-2 flex flex-col items-center justify-center shadow-md';
                 el.innerHTML = `
-                    <div class="h-10 flex items-center justify-center mb-1">
-                        ${acc.icon ? `<img src="${acc.icon}" alt="${acc.bank}" class="h-8 object-contain max-w-[120px]">` : `<span class="text-xs font-bold text-amber-400 uppercase">${acc.bank}</span>`}
+                    <div class="h-8 flex items-center justify-center mb-1">
+                        ${acc.icon ? `<img src="${acc.icon}" alt="${acc.bank}" class="h-7 object-contain max-w-[100px]">` : `<span class="text-xs font-bold text-red-950 uppercase">${acc.bank}</span>`}
                     </div>
-                    <p id="bank-num-${idx}" class="text-2xl font-mono font-bold text-amber-100">${acc.number}</p>
-                    <p class="text-xs text-stone-400">a.n. ${acc.owner}</p>
-                    <button onclick="copyAccNumber('bank-num-${idx}')" class="px-4 py-2 bg-stone-800 hover:bg-stone-700 text-amber-200 text-xs rounded-lg border border-amber-600/30 flex items-center space-x-2 transition-all">
-                        <i class="fa-solid fa-copy"></i> <span>Salin Nomor Rekening</span>
+                    <p id="bank-num-${idx}" class="text-xl font-mono font-bold text-red-950">${acc.number}</p>
+                    <p class="text-xs text-stone-600">a.n. ${acc.owner}</p>
+                    <button onclick="copyAccNumber('bank-num-${idx}')" class="px-4 py-1.5 bg-red-900 hover:bg-red-950 text-amber-200 text-xs rounded-lg flex items-center space-x-2 transition-all">
+                        <i class="fa-solid fa-copy"></i> <span>Salin Rekening</span>
                     </button>
                 `;
                 bankContainer.appendChild(el);
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Interactive Envelope
+    // Envelope Interactive
     const envelopeWrapper = document.getElementById('envelope-wrapper');
     if (envelopeWrapper) {
         envelopeWrapper.addEventListener('click', () => {
@@ -203,34 +203,34 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        commentsContainer.innerHTML = '<p class="text-xs text-amber-400 text-center">Memuat ucapan...</p>';
+        commentsContainer.innerHTML = '<p class="text-xs text-amber-800 text-center">Memuat ucapan...</p>';
 
         fetch(CONFIG.scriptUrl)
             .then(res => res.json())
             .then(data => {
                 commentsContainer.innerHTML = '';
                 if (!data || data.length === 0) {
-                    commentsContainer.innerHTML = '<p class="text-xs text-stone-500 text-center">Belum ada ucapan. Jadilah yang pertama memberikan ucapan!</p>';
+                    commentsContainer.innerHTML = '<p class="text-xs text-stone-500 text-center">Belum ada ucapan. Jadilah yang pertama!</p>';
                     return;
                 }
 
                 data.forEach(item => {
                     const el = document.createElement('div');
-                    el.className = 'bg-stone-900/90 border border-amber-700/30 p-4 rounded-xl text-left space-y-1';
+                    el.className = 'bg-amber-50/90 border border-amber-600/30 p-3.5 rounded-xl text-left space-y-1 shadow-sm';
                     el.innerHTML = `
                         <div class="flex justify-between items-center">
-                            <span class="font-bold text-amber-300 text-sm">${escapeHtml(item.name)}</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full ${item.status === 'Hadir' ? 'bg-amber-950 text-amber-400 border border-amber-600/30' : 'bg-stone-800 text-stone-400'}">${item.status}</span>
+                            <span class="font-bold text-red-950 text-sm">${escapeHtml(item.name)}</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full ${item.status === 'Hadir' ? 'bg-red-900 text-amber-200' : 'bg-stone-300 text-stone-700'}">${item.status}</span>
                         </div>
-                        <p class="text-xs text-stone-300">${escapeHtml(item.message)}</p>
-                        <span class="text-[9px] text-stone-500 block pt-1">${item.date || ''}</span>
+                        <p class="text-xs text-stone-700">${escapeHtml(item.message)}</p>
+                        <span class="text-[9px] text-stone-400 block pt-1">${item.date || ''}</span>
                     `;
                     commentsContainer.appendChild(el);
                 });
             })
             .catch(err => {
                 console.error("Gagal memuat ucapan:", err);
-                commentsContainer.innerHTML = '<p class="text-xs text-red-400 text-center">Gagal memuat ucapan.</p>';
+                commentsContainer.innerHTML = '<p class="text-xs text-red-700 text-center">Gagal memuat ucapan.</p>';
             });
     }
 
@@ -246,18 +246,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const msg = document.getElementById('input-message').value;
 
             if (typeof CONFIG === 'undefined' || !CONFIG.scriptUrl || CONFIG.scriptUrl.includes("PASTE_URL")) {
-                alert("URL Database Google Script belum dipasang di config.js!");
+                alert("URL Database Google Script belum dipasang!");
                 return;
             }
 
             submitBtn.disabled = true;
             submitBtn.innerText = "Mengirim...";
 
-            const payload = {
-                name: name,
-                status: status,
-                message: msg
-            };
+            const payload = { name: name, status: status, message: msg };
 
             fetch(CONFIG.scriptUrl, {
                 method: 'POST',
@@ -273,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(err => {
                 console.error("Gagal mengirim ucapan:", err);
-                alert('Terjadi kesalahan saat menyimpan ucapan. Silakan coba lagi.');
+                alert('Terjadi kesalahan saat menyimpan ucapan.');
                 submitBtn.disabled = false;
                 submitBtn.innerText = "Kirim Ucapan";
             });
