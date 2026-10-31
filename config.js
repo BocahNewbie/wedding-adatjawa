@@ -45,7 +45,7 @@ const CONFIG = {
             image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800"
         },
         {
-            name: "Resepsi",
+            name: "Resepsi Adat",
             time: "11.00 WIB - Selesai",
             location: "Rumah Mempelai Wanita",
             address: "Banjar",
