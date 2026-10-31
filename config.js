@@ -11,15 +11,14 @@ const CONFIG = {
     },
 
     backgrounds: {
-        // Ilustrasi Pendopo Jawa & Langit Klasik Parallax
-        cover: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1920",
-        hero: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1920",
-        quote: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?q=80&w=1920",
-        mempelai: "https://images.unsplash.com/photo-1582560469781-1965b9af903d?q=80&w=1920",
-        acara: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1920",
-        galeri: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?q=80&w=1920",
-        amplop: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?q=80&w=1920",
-        rsvp: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1920"
+        cover: "",
+        hero: "",
+        quote: "",
+        mempelai: "",
+        acara: "",
+        galeri: "",
+        amplop: "",
+        rsvp: ""
     },
 
     wedding: {
