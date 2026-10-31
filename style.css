@@ -3,12 +3,12 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Scrollbar Merah Marun Keraton */
+/* Custom Scrollbar Marun Jawa */
 ::-webkit-scrollbar {
     width: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: #300a0e;
+    background: #2a080c;
 }
 ::-webkit-scrollbar-thumb {
     background: #851820;
@@ -18,30 +18,29 @@ html {
     background: #d4af37;
 }
 
+/* BACKGROUND PATTERN BATIK KAWUNG MURNI (TANPA FOTO / TANPA URL EXTERNAL) */
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #4a0e17;
+    background-color: #3b0910;
+    /* Pattern Batik Kawung SVG Injected */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.12'%3E%3Cpath d='M40 0C25 15 25 25 40 40C25 55 25 65 40 80C55 65 55 55 40 40C55 25 55 15 40 0Z'/%3E%3Cpath d='M0 40C15 25 25 25 40 40C25 55 15 55 0 40Z'/%3E%3Cpath d='M40 40C55 25 65 25 80 40C65 55 55 55 40 40Z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
 }
 
 h1, h2, h3, .font-serif {
     font-family: 'Cinzel Decorative', 'Cinzel', serif;
 }
 
-/* FRAME LENGKUNG JAVA DYNASTY (ARCH CARD) */
+/* FRAME LENGKUNG ARCH JAWA DYNASTY */
 .java-arch-card {
-    background: rgba(253, 248, 240, 0.93);
+    background: rgba(253, 248, 240, 0.95);
     border: 2px solid #d4af37;
     border-radius: 120px 120px 24px 24px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     color: #3b0910;
 }
 
-/* EFEK GLOW EMAS KERATON */
-.gold-text-glow {
-    color: #d4af37;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-}
-
+/* EFEK TULISAN NEON EMAS */
 .neon-credit {
     font-size: 0.85rem;
     font-weight: 700;
@@ -55,7 +54,7 @@ h1, h2, h3, .font-serif {
 /* ANIMASI MELAYANG */
 @keyframes floatAnimation {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
 .float-item {
@@ -70,7 +69,7 @@ h1, h2, h3, .font-serif {
     to { transform: rotate(360deg); }
 }
 
-/* AMPLOP DIGITAL BERGAYA MARUN EMAS */
+/* AMPLOP DIGITAL */
 .envelope-container {
     position: relative;
     width: 100%;
