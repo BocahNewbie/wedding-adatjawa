@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. INTEGRASI CONFIG & TAMPILAN UTAMA
     if (typeof CONFIG !== 'undefined') {
-        // Terapan Background Parallax Foto Klien
         const bgMap = {
             'sec-cover': CONFIG.backgrounds?.cover,
             'sec-hero': CONFIG.backgrounds?.hero,
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (el && url) el.style.backgroundImage = `url('${url}')`;
         }
 
-        // Teks Tampilan Utama
         if (document.getElementById('cover-title-tag')) document.getElementById('cover-title-tag').innerText = CONFIG.event.title;
         if (document.getElementById('hero-tag')) document.getElementById('hero-tag').innerText = CONFIG.event.title;
         if (document.getElementById('hero-date')) document.getElementById('hero-date').innerText = CONFIG.event.dateText;
@@ -25,14 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.getElementById('quote-source')) document.getElementById('quote-source').innerText = `— ${CONFIG.event.quoteSource}`;
         if (document.getElementById('btn-maps')) document.getElementById('btn-maps').href = CONFIG.event.mapsUrl;
 
-        // Helper Instagram URL (Otomatis Bersihkan @ dan Buka Link Resmi)
         const getIgUrl = (handle) => {
             if (!handle) return '#';
             const cleanHandle = handle.replace('@', '').trim();
             return `https://instagram.com/${cleanHandle}`;
         };
 
-        // Render Profile Mempelai
+        // Render Profile Mempelai Jawa
         const coverHeading = document.getElementById('cover-heading');
         const heroHeading = document.getElementById('hero-heading');
         const profileContainer = document.getElementById('profile-container');
@@ -46,22 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (profileContainer) {
                 profileContainer.innerHTML = `
                     <div class="text-center space-y-3 mb-8">
-                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cyan-300">Pasangan Mempelai</h2>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-amber-300">Pasangan Mempelai</h2>
                     </div>
                     <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl backdrop-blur-md text-center space-y-4 border-cyan-500/30 float-item">
-                            <img src="${p.foto}" class="w-36 h-36 rounded-full mx-auto object-cover border-2 border-cyan-400 shadow-lg">
-                            <h3 class="font-serif text-2xl font-bold text-slate-100">${p.nama}</h3>
-                            <p class="text-xs text-slate-400">${p.orangTua}</p>
-                            <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <div class="bg-stone-900/80 border border-amber-600/30 p-8 rounded-3xl backdrop-blur-md text-center space-y-4 float-item shadow-2xl">
+                            <img src="${p.foto}" class="w-36 h-36 rounded-full mx-auto object-cover border-2 border-amber-500 shadow-lg">
+                            <h3 class="font-serif text-2xl font-bold text-amber-100">${p.nama}</h3>
+                            <p class="text-xs text-stone-400">${p.orangTua}</p>
+                            <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-400 hover:text-amber-300 transition-colors">
                                 <i class="fa-brands fa-instagram"></i><span>${p.instagram}</span>
                             </a>
                         </div>
-                        <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl backdrop-blur-md text-center space-y-4 border-purple-500/30 float-item" style="animation-delay: -2.5s;">
-                            <img src="${w.foto}" class="w-36 h-36 rounded-full mx-auto object-cover border-2 border-purple-400 shadow-lg">
-                            <h3 class="font-serif text-2xl font-bold text-slate-100">${w.nama}</h3>
-                            <p class="text-xs text-slate-400">${w.orangTua}</p>
-                            <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-purple-400 hover:text-purple-300 transition-colors">
+                        <div class="bg-stone-900/80 border border-amber-600/30 p-8 rounded-3xl backdrop-blur-md text-center space-y-4 float-item shadow-2xl" style="animation-delay: -2.5s;">
+                            <img src="${w.foto}" class="w-36 h-36 rounded-full mx-auto object-cover border-2 border-amber-500 shadow-lg">
+                            <h3 class="font-serif text-2xl font-bold text-amber-100">${w.nama}</h3>
+                            <p class="text-xs text-stone-400">${w.orangTua}</p>
+                            <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-400 hover:text-amber-300 transition-colors">
                                 <i class="fa-brands fa-instagram"></i><span>${w.instagram}</span>
                             </a>
                         </div>
@@ -70,51 +67,51 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Render Jadwal Acara (Dengan Foto Tempat/Rumah)
+        // Render Jadwal Acara
         const schedContainer = document.getElementById('schedule-container');
         if (schedContainer && CONFIG.schedules) {
             schedContainer.innerHTML = '';
             CONFIG.schedules.forEach(item => {
                 const card = document.createElement('div');
-                card.className = 'bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden backdrop-blur-md shadow-xl text-center space-y-4 group hover:border-cyan-500/50 transition-all duration-300';
+                card.className = 'bg-stone-900/90 border border-amber-700/40 rounded-2xl overflow-hidden backdrop-blur-md shadow-xl text-center space-y-4 group hover:border-amber-500 transition-all duration-300';
                 card.innerHTML = `
-                    ${item.image ? `<div class="h-44 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div></div>` : ''}
+                    ${item.image ? `<div class="h-44 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-stone-950 to-transparent"></div></div>` : ''}
                     <div class="p-6 space-y-2">
-                        <h3 class="font-serif text-2xl font-bold text-cyan-300">${item.name}</h3>
-                        <p class="text-slate-300 text-sm font-semibold">${item.time}</p>
-                        <p class="text-xs text-slate-400">${item.location}<br>${item.address}</p>
+                        <h3 class="font-serif text-2xl font-bold text-amber-300">${item.name}</h3>
+                        <p class="text-amber-100 text-sm font-semibold">${item.time}</p>
+                        <p class="text-xs text-stone-400">${item.location}<br>${item.address}</p>
                     </div>
                 `;
                 schedContainer.appendChild(card);
             });
         }
 
-        // Render Galeri Foto
+        // Render Galeri
         const galleryGrid = document.getElementById('gallery-grid');
         if (galleryGrid && CONFIG.gallery) {
             galleryGrid.innerHTML = '';
             CONFIG.gallery.forEach(url => {
                 const wrap = document.createElement('div');
-                wrap.className = 'overflow-hidden rounded-2xl border border-slate-800 shadow-lg group';
+                wrap.className = 'overflow-hidden rounded-2xl border border-amber-700/30 shadow-lg group';
                 wrap.innerHTML = `<img src="${url}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">`;
                 galleryGrid.appendChild(wrap);
             });
         }
 
-        // Render Amplop Digital + Ikon Bank
+        // Render Amplop Digital
         const bankContainer = document.getElementById('bank-container');
         if (bankContainer && CONFIG.bankAccounts) {
             bankContainer.innerHTML = '';
             CONFIG.bankAccounts.forEach((acc, idx) => {
                 const el = document.createElement('div');
-                el.className = 'bg-slate-900/90 border border-slate-800 p-6 rounded-2xl backdrop-blur-md space-y-3 flex flex-col items-center justify-center shadow-xl';
+                el.className = 'bg-stone-900/95 border border-amber-600/40 p-6 rounded-2xl backdrop-blur-md space-y-3 flex flex-col items-center justify-center shadow-xl';
                 el.innerHTML = `
                     <div class="h-10 flex items-center justify-center mb-1">
-                        ${acc.icon ? `<img src="${acc.icon}" alt="${acc.bank}" class="h-8 object-contain max-w-[120px]">` : `<span class="text-xs font-bold text-cyan-400 uppercase">${acc.bank}</span>`}
+                        ${acc.icon ? `<img src="${acc.icon}" alt="${acc.bank}" class="h-8 object-contain max-w-[120px]">` : `<span class="text-xs font-bold text-amber-400 uppercase">${acc.bank}</span>`}
                     </div>
-                    <p id="bank-num-${idx}" class="text-2xl font-mono font-bold text-slate-100">${acc.number}</p>
-                    <p class="text-xs text-slate-400">a.n. ${acc.owner}</p>
-                    <button onclick="copyAccNumber('bank-num-${idx}')" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs rounded-lg border border-slate-700 flex items-center space-x-2 transition-all">
+                    <p id="bank-num-${idx}" class="text-2xl font-mono font-bold text-amber-100">${acc.number}</p>
+                    <p class="text-xs text-stone-400">a.n. ${acc.owner}</p>
+                    <button onclick="copyAccNumber('bank-num-${idx}')" class="px-4 py-2 bg-stone-800 hover:bg-stone-700 text-amber-200 text-xs rounded-lg border border-amber-600/30 flex items-center space-x-2 transition-all">
                         <i class="fa-solid fa-copy"></i> <span>Salin Nomor Rekening</span>
                     </button>
                 `;
@@ -123,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Nama Tamu Dinamis dari URL (?to=Nama+Tamu)
+    // Nama Tamu Dinamis
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('to');
     if (guestParam) {
@@ -131,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.getElementById('input-name')) document.getElementById('input-name').value = guestParam;
     }
 
-    // Buka Undangan & Autoplay Musik
+    // Buka Undangan & Audio
     const btnOpen = document.getElementById('btn-open');
     const audio = document.getElementById('wedding-audio');
     const audioControl = document.getElementById('audio-control');
@@ -172,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Buka / Tutup Amplop Digital saat Diklik
+    // Interactive Envelope
     const envelopeWrapper = document.getElementById('envelope-wrapper');
     if (envelopeWrapper) {
         envelopeWrapper.addEventListener('click', () => {
@@ -180,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hitung Mundur (Countdown)
+    // Countdown Timer
     if (typeof CONFIG !== 'undefined' && CONFIG.event?.targetCountdown) {
         const targetDate = new Date(CONFIG.event.targetCountdown).getTime();
         setInterval(() => {
@@ -195,38 +192,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-    // RSVP Form & Fetch Comments
+    // Fetch Comments
     const rsvpForm = document.getElementById('rsvp-form');
     const commentsContainer = document.getElementById('comments-container');
 
     function fetchComments() {
         if (!commentsContainer) return;
         if (typeof CONFIG === 'undefined' || !CONFIG.scriptUrl || CONFIG.scriptUrl.includes("PASTE_URL")) {
-            commentsContainer.innerHTML = '<p class="text-xs text-slate-500 text-center">Belum ada ucapan tersimpan.</p>';
+            commentsContainer.innerHTML = '<p class="text-xs text-stone-500 text-center">Belum ada ucapan tersimpan.</p>';
             return;
         }
 
-        commentsContainer.innerHTML = '<p class="text-xs text-cyan-400 text-center">Memuat ucapan...</p>';
+        commentsContainer.innerHTML = '<p class="text-xs text-amber-400 text-center">Memuat ucapan...</p>';
 
         fetch(CONFIG.scriptUrl)
             .then(res => res.json())
             .then(data => {
                 commentsContainer.innerHTML = '';
                 if (!data || data.length === 0) {
-                    commentsContainer.innerHTML = '<p class="text-xs text-slate-500 text-center">Belum ada ucapan. Jadilah yang pertama memberikan ucapan!</p>';
+                    commentsContainer.innerHTML = '<p class="text-xs text-stone-500 text-center">Belum ada ucapan. Jadilah yang pertama memberikan ucapan!</p>';
                     return;
                 }
 
                 data.forEach(item => {
                     const el = document.createElement('div');
-                    el.className = 'bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-left space-y-1';
+                    el.className = 'bg-stone-900/90 border border-amber-700/30 p-4 rounded-xl text-left space-y-1';
                     el.innerHTML = `
                         <div class="flex justify-between items-center">
-                            <span class="font-bold text-cyan-300 text-sm">${escapeHtml(item.name)}</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded-full ${item.status === 'Hadir' ? 'bg-cyan-950 text-cyan-400 border border-cyan-500/30' : 'bg-slate-800 text-slate-400'}">${item.status}</span>
+                            <span class="font-bold text-amber-300 text-sm">${escapeHtml(item.name)}</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full ${item.status === 'Hadir' ? 'bg-amber-950 text-amber-400 border border-amber-600/30' : 'bg-stone-800 text-stone-400'}">${item.status}</span>
                         </div>
-                        <p class="text-xs text-slate-300">${escapeHtml(item.message)}</p>
-                        <span class="text-[9px] text-slate-500 block pt-1">${item.date || ''}</span>
+                        <p class="text-xs text-stone-300">${escapeHtml(item.message)}</p>
+                        <span class="text-[9px] text-stone-500 block pt-1">${item.date || ''}</span>
                     `;
                     commentsContainer.appendChild(el);
                 });
@@ -284,7 +281,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Helper Functions
 function escapeHtml(text) {
     return text ? text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : '';
 }
