@@ -1,85 +1,82 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <base href="https://invitation-satu.vercel.app/">
+    <base href="https://invitation-dua.vercel.app/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Digital</title>
+    <title>Undangan Digital Adat Jawa</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts Bertema Etnik Klasik Jawa -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden">
+<body class="bg-stone-950 text-stone-100 font-sans selection:bg-amber-500 selection:text-stone-950 overflow-x-hidden">
 
     <!-- COVER OVERLAY -->
     <div id="sec-cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center text-center p-6 bg-cover bg-center transition-all duration-1000 ease-in-out">
-        <div class="absolute inset-0 bg-slate-950/85 backdrop-blur-sm"></div>
+        <div class="absolute inset-0 bg-stone-950/90 backdrop-blur-sm"></div>
         <div class="relative z-10 max-w-lg mx-auto flex flex-col items-center space-y-6">
-            <span id="cover-title-tag" class="text-cyan-400 font-medium tracking-[0.3em] text-xs uppercase bg-cyan-950/50 border border-cyan-500/30 px-4 py-1.5 rounded-full backdrop-blur-md">Undangan</span>
-            <h1 id="cover-heading" class="font-serif text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-200 to-purple-300"></h1>
-            <p class="text-slate-300 text-sm font-light">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-            <div class="bg-slate-900/70 border border-slate-700/60 rounded-2xl p-4 w-full backdrop-blur-md shadow-2xl">
-                <span id="guest-name" class="text-xl sm:text-2xl font-bold text-cyan-300 capitalize">Tamu Undangan</span>
+            <span id="cover-title-tag" class="text-amber-400 font-medium tracking-[0.3em] text-xs uppercase bg-amber-950/60 border border-amber-600/40 px-5 py-1.5 rounded-full backdrop-blur-md">Pawiwahan Ageng</span>
+            <h1 id="cover-heading" class="font-serif text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-300 to-amber-500 leading-tight"></h1>
+            <p class="text-stone-300 text-sm font-light">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+            <div class="bg-stone-900/80 border border-amber-600/40 rounded-2xl p-4 w-full backdrop-blur-md shadow-2xl">
+                <span id="guest-name" class="text-xl sm:text-2xl font-bold text-amber-300 capitalize">Tamu Undangan</span>
             </div>
-            <button id="btn-open" class="group relative px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-slate-950 font-bold tracking-wide shadow-lg shadow-cyan-500/20 hover:scale-105 transition-all duration-300 flex items-center space-x-3">
-                <i class="fa-solid fa-envelope-open text-slate-950"></i>
+            <button id="btn-open" class="group relative px-8 py-3.5 bg-gradient-to-r from-amber-600 to-amber-500 rounded-full text-stone-950 font-bold tracking-wide shadow-lg shadow-amber-600/30 hover:scale-105 transition-all duration-300 flex items-center space-x-3">
+                <i class="fa-solid fa-envelope-open text-stone-950"></i>
                 <span>Buka Undangan</span>
             </button>
         </div>
     </div>
 
-    <!-- AUDIO BACKGROUND & TOMBOL KENDALI -->
+    <!-- AUDIO BACKGROUND -->
     <audio id="wedding-audio" loop preload="auto">
         <source src="musikiqro.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="audio-control" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-slate-900/80 border border-cyan-500/40 rounded-full flex items-center justify-center text-cyan-400 shadow-lg backdrop-blur-md hover:scale-110 transition-all duration-300 hidden">
+    <button id="audio-control" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-stone-900/90 border border-amber-500/50 rounded-full flex items-center justify-center text-amber-400 shadow-xl backdrop-blur-md hover:scale-110 transition-all duration-300 hidden">
         <i id="audio-icon" class="fa-solid fa-compact-disc text-xl"></i>
     </button>
 
     <!-- MAIN CONTENT -->
     <main id="main-content" class="hidden">
 
-        <!-- HERO SECTION WITH PARALLAX & DECORATIVE ANIMATION -->
+        <!-- HERO SECTION -->
         <section id="sec-hero" class="relative min-h-screen flex items-center justify-center text-center p-6 bg-cover bg-center bg-fixed overflow-hidden">
-            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-[2px]"></div>
+            <div class="absolute inset-0 bg-stone-950/85 backdrop-blur-[2px]"></div>
 
-            <div class="absolute top-1/4 left-8 text-cyan-400/40 text-3xl butterfly pointer-events-none">
+            <div class="absolute top-1/4 left-8 text-amber-500/30 text-3xl butterfly pointer-events-none">
                 <i class="fa-solid fa-leaf"></i>
             </div>
-            <div class="absolute top-1/3 right-10 text-purple-400/50 text-2xl butterfly pointer-events-none" style="animation-delay: -3s;">
+            <div class="absolute top-1/3 right-10 text-amber-400/30 text-2xl butterfly pointer-events-none" style="animation-delay: -3s;">
                 <i class="fa-solid fa-feather-pointed"></i>
-            </div>
-            <div class="absolute bottom-1/4 left-16 text-cyan-300/30 text-2xl float-item pointer-events-none">
-                <i class="fa-solid fa-heart"></i>
             </div>
 
             <div class="relative z-10 max-w-2xl mx-auto space-y-6 py-20">
-                <p id="hero-tag" class="text-cyan-400 tracking-[0.4em] text-xs uppercase font-semibold"></p>
-                <h1 id="hero-heading" class="font-serif text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-cyan-100 to-purple-200"></h1>
-                <p id="hero-date" class="text-slate-300 font-light text-base sm:text-lg"></p>
+                <p id="hero-tag" class="text-amber-400 tracking-[0.4em] text-xs uppercase font-semibold"></p>
+                <h1 id="hero-heading" class="font-serif text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-300 to-amber-500 leading-tight"></h1>
+                <p id="hero-date" class="text-stone-300 font-light text-base sm:text-lg"></p>
 
                 <!-- COUNTDOWN -->
                 <div class="grid grid-cols-4 gap-3 max-w-md mx-auto pt-4">
-                    <div class="bg-slate-900/70 border border-cyan-500/30 p-3 rounded-xl backdrop-blur-md">
-                        <span id="days" class="block text-2xl font-bold text-cyan-400">00</span>
-                        <span class="text-[10px] uppercase text-slate-400">Hari</span>
+                    <div class="bg-stone-900/80 border border-amber-600/40 p-3 rounded-xl backdrop-blur-md">
+                        <span id="days" class="block text-2xl font-bold text-amber-400">00</span>
+                        <span class="text-[10px] uppercase text-stone-400">Hari</span>
                     </div>
-                    <div class="bg-slate-900/70 border border-cyan-500/30 p-3 rounded-xl backdrop-blur-md">
-                        <span id="hours" class="block text-2xl font-bold text-cyan-400">00</span>
-                        <span class="text-[10px] uppercase text-slate-400">Jam</span>
+                    <div class="bg-stone-900/80 border border-amber-600/40 p-3 rounded-xl backdrop-blur-md">
+                        <span id="hours" class="block text-2xl font-bold text-amber-400">00</span>
+                        <span class="text-[10px] uppercase text-stone-400">Jam</span>
                     </div>
-                    <div class="bg-slate-900/70 border border-cyan-500/30 p-3 rounded-xl backdrop-blur-md">
-                        <span id="minutes" class="block text-2xl font-bold text-cyan-400">00</span>
-                        <span class="text-[10px] uppercase text-slate-400">Menit</span>
+                    <div class="bg-stone-900/80 border border-amber-600/40 p-3 rounded-xl backdrop-blur-md">
+                        <span id="minutes" class="block text-2xl font-bold text-amber-400">00</span>
+                        <span class="text-[10px] uppercase text-stone-400">Menit</span>
                     </div>
-                    <div class="bg-slate-900/70 border border-cyan-500/30 p-3 rounded-xl backdrop-blur-md">
-                        <span id="seconds" class="block text-2xl font-bold text-cyan-400">00</span>
-                        <span class="text-[10px] uppercase text-slate-400">Detik</span>
+                    <div class="bg-stone-900/80 border border-amber-600/40 p-3 rounded-xl backdrop-blur-md">
+                        <span id="seconds" class="block text-2xl font-bold text-amber-400">00</span>
+                        <span class="text-[10px] uppercase text-stone-400">Detik</span>
                     </div>
                 </div>
             </div>
@@ -87,33 +84,33 @@
 
         <!-- QUOTE SECTION -->
         <section id="sec-quote" class="relative py-20 px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-slate-950/85"></div>
+            <div class="absolute inset-0 bg-stone-950/90"></div>
             <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
-                <i class="fa-solid fa-quote-left text-3xl text-cyan-500/50 float-item"></i>
-                <p id="quote-text" class="font-serif italic text-lg sm:text-xl text-slate-200 leading-relaxed"></p>
-                <span id="quote-source" class="block text-sm text-cyan-400 font-semibold tracking-widest uppercase"></span>
+                <i class="fa-solid fa-quote-left text-3xl text-amber-500/50 float-item"></i>
+                <p id="quote-text" class="font-serif italic text-lg sm:text-xl text-stone-200 leading-relaxed"></p>
+                <span id="quote-source" class="block text-sm text-amber-400 font-semibold tracking-widest uppercase"></span>
             </div>
         </section>
 
         <!-- PROFIL SECTION -->
         <section id="sec-mempelai" class="relative py-24 px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-slate-950/85"></div>
+            <div class="absolute inset-0 bg-stone-950/90"></div>
             <div class="relative z-10 max-w-5xl mx-auto space-y-12">
                 <div id="profile-container"></div>
             </div>
         </section>
 
-        <!-- RANGKAIAN ACARA (DENGAN FOTO LOKASI) -->
+        <!-- RANGKAIAN ACARA -->
         <section id="sec-acara" class="relative py-24 px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-slate-950/90"></div>
+            <div class="absolute inset-0 bg-stone-950/90"></div>
             <div class="relative z-10 max-w-4xl mx-auto space-y-12">
                 <div class="text-center space-y-3">
-                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cyan-300">Rangkaian Acara</h2>
-                    <p class="text-slate-400 text-sm">Waktu dan Lokasi Pelaksanaan</p>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-amber-300">Rangkaian Acara</h2>
+                    <p class="text-stone-400 text-sm">Waktu dan Lokasi Pelaksanaan</p>
                 </div>
                 <div id="schedule-container" class="grid md:grid-cols-2 gap-8"></div>
                 <div class="text-center">
-                    <a id="btn-maps" href="#" target="_blank" class="inline-flex items-center space-x-3 px-8 py-3.5 bg-cyan-500 text-slate-950 font-bold rounded-full hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20">
+                    <a id="btn-maps" href="#" target="_blank" class="inline-flex items-center space-x-3 px-8 py-3.5 bg-gradient-to-r from-amber-600 to-amber-500 text-stone-950 font-bold rounded-full hover:brightness-110 transition-all shadow-lg shadow-amber-600/30">
                         <i class="fa-solid fa-map-location-dot"></i>
                         <span>Petunjuk Ke Lokasi (Google Maps)</span>
                     </a>
@@ -123,36 +120,33 @@
 
         <!-- GALERI FOTO -->
         <section id="sec-galeri" class="relative py-24 px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-slate-950/90"></div>
+            <div class="absolute inset-0 bg-stone-950/95"></div>
             <div class="relative z-10 max-w-5xl mx-auto space-y-12">
                 <div class="text-center space-y-3">
-                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cyan-300">Galeri Foto</h2>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-amber-300">Galeri Foto</h2>
                 </div>
                 <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
             </div>
         </section>
 
-        <!-- AMPLOP DIGITAL DENGAN ANIMASI INTERAKTIF MELUNCUR KELUAR -->
+        <!-- AMPLOP DIGITAL -->
         <section id="sec-amplop" class="relative py-24 px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-slate-950/90"></div>
+            <div class="absolute inset-0 bg-stone-950/95"></div>
             <div class="relative z-10 max-w-2xl mx-auto text-center space-y-8">
                 <div class="space-y-3">
-                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cyan-300">Amplop Digital / Hadiah</h2>
-                    <p class="text-slate-400 text-sm">Tanda kasih dan doa restu Anda sangat berarti bagi kami.</p>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-amber-300">Amplop Digital / Hadiah</h2>
+                    <p class="text-stone-400 text-sm">Tanda kasih dan doa restu Anda sangat berarti bagi kami.</p>
                 </div>
 
-                <!-- WADAH AMPLOP -->
                 <div id="envelope-wrapper" class="envelope-container">
-                    <!-- SAMPUL DEPAN AMPLOP -->
                     <div class="envelope-box">
-                        <div class="w-16 h-16 bg-cyan-950/60 border border-cyan-500/40 rounded-full flex items-center justify-center text-cyan-400 text-2xl mx-auto transition-transform duration-500 envelope-icon">
+                        <div class="w-16 h-16 bg-amber-950/70 border border-amber-500/50 rounded-full flex items-center justify-center text-amber-400 text-2xl mx-auto transition-transform duration-500 envelope-icon">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
-                        <p class="text-base font-bold text-slate-100 mt-3">Buka Amplop</p>
-                        <p class="text-xs text-cyan-400">Tanda Kasih</p>
+                        <p class="text-base font-bold text-stone-100 mt-3">Buka Amplop</p>
+                        <p class="text-xs text-amber-400">Tanda Kasih</p>
                     </div>
 
-                    <!-- KARTU REKENING YANG KELUAR DARI DALAM AMPLOP -->
                     <div id="bank-container" class="envelope-card-content space-y-4"></div>
                 </div>
             </div>
@@ -160,30 +154,30 @@
 
         <!-- RSVP & UCAPAN -->
         <section id="sec-rsvp" class="relative py-24 px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-slate-950/90"></div>
+            <div class="absolute inset-0 bg-stone-950/95"></div>
             <div class="relative z-10 max-w-2xl mx-auto space-y-12">
                 <div class="text-center space-y-3">
-                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-cyan-300">Ucapan</h2>
-                    <p class="text-slate-400 text-sm">Konfirmasi kehadiran dan sampaikan pesan Anda</p>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-amber-300">Ucapan & Doa Restu</h2>
+                    <p class="text-stone-400 text-sm">Konfirmasi kehadiran dan sampaikan pesan Anda</p>
                 </div>
 
-                <form id="rsvp-form" class="bg-slate-900/80 border border-slate-800 p-6 sm:p-8 rounded-2xl backdrop-blur-md space-y-4">
+                <form id="rsvp-form" class="bg-stone-900/90 border border-amber-700/40 p-6 sm:p-8 rounded-2xl backdrop-blur-md space-y-4 shadow-2xl">
                     <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1">Nama Anda</label>
-                        <input type="text" id="input-name" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 text-sm focus:outline-none focus:border-cyan-500">
+                        <label class="block text-xs font-medium text-stone-300 mb-1">Nama Anda</label>
+                        <input type="text" id="input-name" required class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100 text-sm focus:outline-none focus:border-amber-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1">Konfirmasi Kehadiran</label>
-                        <select id="input-status" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 text-sm focus:outline-none focus:border-cyan-500">
+                        <label class="block text-xs font-medium text-stone-300 mb-1">Konfirmasi Kehadiran</label>
+                        <select id="input-status" class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100 text-sm focus:outline-none focus:border-amber-500">
                             <option value="Hadir">Hadir</option>
                             <option value="Tidak Hadir">Tidak Hadir</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1">Pesan / Ucapan</label>
-                        <textarea id="input-message" rows="3" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        <label class="block text-xs font-medium text-stone-300 mb-1">Pesan / Ucapan</label>
+                        <textarea id="input-message" rows="3" required class="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-2.5 text-stone-100 text-sm focus:outline-none focus:border-amber-500"></textarea>
                     </div>
-                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl text-slate-950 font-bold text-sm">Kirim Ucapan</button>
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-amber-600 to-amber-500 rounded-xl text-stone-950 font-bold text-sm hover:brightness-110 transition-all">Kirim Ucapan</button>
                 </form>
 
                 <div id="comments-container" class="space-y-3 max-h-80 overflow-y-auto pr-2"></div>
@@ -191,7 +185,7 @@
         </section>
 
         <!-- FOOTER -->
-        <footer class="py-8 text-center bg-slate-950 border-t border-slate-900 text-xs text-slate-500 flex flex-col items-center justify-center space-y-2">
+        <footer class="py-8 text-center bg-stone-950 border-t border-stone-900 text-xs text-stone-500 flex flex-col items-center justify-center space-y-2">
             <p>Terima Kasih Atas Kehadiran & Doa Restu Anda</p>
             <div class="pt-2">
                 <span class="neon-credit">Created by Bocah Newbie</span>
