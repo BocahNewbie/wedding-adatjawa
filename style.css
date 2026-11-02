@@ -47,7 +47,7 @@ h1, h2, h3, .font-serif {
         inset 0 0 0 4px rgba(212, 175, 55, 0.15);
 }
 
-/* JEMBATAN CONNECTOR GLASSMORPHISM ANTAR SECTION CARD (SOLUSI MELAYANG) */
+/* JEMBATAN CONNECTOR GLASSMORPHISM ANTAR SECTION CARD */
 section.relative:not(:last-of-type)::after {
     content: '';
     position: absolute;
