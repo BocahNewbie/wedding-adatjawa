@@ -10,6 +10,14 @@ const CONFIG = {
         mapsUrl: "https://maps.google.com"
     },
 
+    // TEKS UCAPAN TERIMA KASIH (BISA DIUBAH BEBAS DI SINI)
+    thanks: {
+        title: "Maturnuwun",
+        message: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.",
+        subtext: "Kami Yang Berbahagia,",
+        family: "Beserta Keluarga Besar"
+    },
+
     backgrounds: {
         cover: "",
         hero: "",
@@ -19,7 +27,8 @@ const CONFIG = {
         acara: "",
         galeri: "",
         amplop: "",
-        rsvp: ""
+        rsvp: "",
+        thanks: ""
     },
 
     wedding: {
@@ -39,7 +48,6 @@ const CONFIG = {
         }
     },
 
-    // FITUR BARU: PERJALANAN CINTA
     loveStory: [
         {
             year: "2021",
