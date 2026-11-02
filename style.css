@@ -18,11 +18,11 @@ html {
     background: #d4af37;
 }
 
-/* BACKGROUND PATTERN BATIK KAWUNG MURNI */
+/* BACKGROUND PATTERN BATIK KAWUNG MURNI FIXED */
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #3b0910;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.12'%3E%3Cpath d='M40 0C25 15 25 25 40 40C25 55 25 65 40 80C55 65 55 55 40 40C55 25 55 15 40 0Z'/%3E%3Cpath d='M0 40C15 25 25 25 40 40C25 55 15 55 0 40Z'/%3E%3Cpath d='M40 40C55 25 65 25 80 40C65 55 55 55 40 40Z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.12'%3E%3Cpath d='M40 0C25 15 25 25 40 40C25 55 25 65 40 80C55 65 55 55 40 0Z'/%3E%3Cpath d='M0 40C15 25 25 25 40 40C25 55 15 55 0 40Z'/%3E%3Cpath d='M40 40C55 25 65 25 80 40C65 55 55 55 40 40Z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
 }
 
@@ -34,7 +34,7 @@ h1, h2, h3, .font-serif {
     font-family: 'Great Vibes', cursive;
 }
 
-/* FRAME LENGKUNG JAWA DYNASTY */
+/* FRAME LENGKUNG JAWA DYNASTY UNIFORM */
 .java-arch-card {
     background: rgba(253, 248, 240, 0.96);
     border: 2px solid #d4af37;
@@ -51,15 +51,15 @@ h1, h2, h3, .font-serif {
 section.relative:not(:last-of-type)::after {
     content: '';
     position: absolute;
-    bottom: -64px;
+    bottom: -48px;
     left: 50%;
     transform: translateX(-50%);
     width: 3px;
-    height: 64px;
+    height: 48px;
     background: linear-gradient(
         180deg, 
         rgba(212, 175, 55, 0.9) 0%, 
-        rgba(133, 24, 32, 0.4) 50%, 
+        rgba(133, 24, 32, 0.6) 50%, 
         rgba(212, 175, 55, 0.9) 100%
     );
     box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
@@ -72,15 +72,15 @@ section.relative:not(:last-of-type)::before {
     font-size: 10px;
     color: #d4af37;
     position: absolute;
-    bottom: -43px;
+    bottom: -36px;
     left: 50%;
     transform: translateX(-50%);
     width: 24px;
     height: 24px;
-    background: rgba(59, 9, 16, 0.85);
+    background: rgba(59, 9, 16, 0.95);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(212, 175, 55, 0.7);
+    border: 1px solid rgba(212, 175, 55, 0.8);
     border-radius: 50%;
     display: flex;
     align-items: center;
