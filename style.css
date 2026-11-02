@@ -181,3 +181,44 @@ h1, h2, h3, .font-serif {
     transform: rotate(180deg);
     color: #d4af37;
 }
+
+/* EFEK JEMBATAN GLASSMORPHISM CONNECTOR ANTAR CARD */
+section.relative:not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    bottom: -64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 64px;
+    background: linear-gradient(
+        180deg, 
+        rgba(212, 175, 55, 0.8) 0%, 
+        rgba(133, 24, 32, 0.4) 50%, 
+        rgba(212, 175, 55, 0.8) 100%
+    );
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+    z-index: 15;
+}
+
+/* ORNAMEN SIMBOL DI TENGAH JEMBATAN CONNECTOR */
+section.relative:not(:last-of-type)::before {
+    content: '❖';
+    font-size: 10px;
+    color: #d4af37;
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    background: rgba(59, 9, 16, 0.85);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 16;
+}
