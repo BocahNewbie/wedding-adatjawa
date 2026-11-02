@@ -24,12 +24,14 @@ const CONFIG = {
     wedding: {
         pria: {
             nama: "M. Adzka Ramdhani, S.E., M.M.",
+            panggilan: "Adzka",
             orangTua: "Putra Pertama dari Bapak Kamaludin & Ibu Dra. Ida Srinurwenda",
             foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500",
             instagram: "@kaka_ramdhani"
         },
         wanita: {
             nama: "Sri Ina Aristiani",
+            panggilan: "Ina",
             orangTua: "Putri Bungsu dari Bapak Nama Ayah & Ibu Nama Ibu",
             foto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500",
             instagram: "@iamqueenvanilla"
