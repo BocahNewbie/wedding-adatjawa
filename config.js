@@ -13,7 +13,7 @@ const CONFIG = {
     // KELOLA SEMUA BACKGROUND & GAMBAR DI SINI
     backgrounds: {
         // Background utama global (bisa berupa URL foto/gambar atau SVG Data-URI pattern)
-        globalPattern: "background.jpg"
+        globalPattern: "background.jpeg"
     },
 
     // TEKS UCAPAN TERIMA KASIH
