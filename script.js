@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. INTEGRASI CONFIG & TAMPILAN UTAMA
     if (typeof CONFIG !== 'undefined') {
-        // Terapkan background utama dari config.js ke body secara dinamis
         if (CONFIG.backgrounds && CONFIG.backgrounds.globalPattern) {
             document.body.style.backgroundImage = `url('${CONFIG.backgrounds.globalPattern}')`;
         }
@@ -11,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.getElementById('hero-date')) document.getElementById('hero-date').innerText = CONFIG.event.dateText;
         if (document.getElementById('quote-text')) document.getElementById('quote-text').innerText = `"${CONFIG.event.quote}"`;
         if (document.getElementById('quote-source')) document.getElementById('quote-source').innerText = `— ${CONFIG.event.quoteSource}`;
-        if (document.getElementById('btn-maps')) document.getElementById('btn-maps').href = CONFIG.event.mapsUrl;
 
         const getIgUrl = (handle) => {
             if (!handle) return '#';
@@ -19,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return `https://instagram.com/${cleanHandle}`;
         };
 
-        // Render Profile Mempelai Jawa Dynasty
         const coverHeading = document.getElementById('cover-heading');
         const heroHeading = document.getElementById('hero-heading');
         const thanksCouples = document.getElementById('thanks-couples');
@@ -42,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-red-950">Pasangan Mempelai</h2>
                     </div>
                     <div class="grid md:grid-cols-2 gap-8 items-stretch">
-                        <!-- Kartu Mempelai Pria -->
                         <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center shadow-md hover:shadow-xl transition-all h-full flex flex-col justify-between space-y-4">
                             <div class="space-y-4">
                                 <div class="relative w-36 h-36 mx-auto">
@@ -61,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
 
-                        <!-- Kartu Mempelai Wanita -->
                         <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center shadow-md hover:shadow-xl transition-all h-full flex flex-col justify-between space-y-4">
                             <div class="space-y-4">
                                 <div class="relative w-36 h-36 mx-auto">
@@ -84,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Render Perjalanan Cinta (Story Timeline)
         const storyContainer = document.getElementById('story-container');
         if (storyContainer && CONFIG.loveStory) {
             storyContainer.innerHTML = '<div id="journey-line" class="absolute top-0 left-[-2px] w-[2px] bg-gradient-to-b from-amber-600 via-amber-400 to-red-900 transition-all duration-300 ease-out h-0"></div>';
@@ -105,26 +98,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Render Jadwal Acara
+        // RENDER JADWAL DENGAN TOMBOL MAPS MASING-MASING
         const schedContainer = document.getElementById('schedule-container');
         if (schedContainer && CONFIG.schedules) {
             schedContainer.innerHTML = '';
             CONFIG.schedules.forEach(item => {
                 const card = document.createElement('div');
-                card.className = 'bg-amber-50/90 border border-amber-600/30 rounded-2xl overflow-hidden shadow-lg text-center space-y-4 group transition-all duration-300 hover:-translate-y-1';
+                card.className = 'bg-amber-50/90 border border-amber-600/30 rounded-2xl overflow-hidden shadow-lg text-center space-y-4 group transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between';
                 card.innerHTML = `
-                    ${item.image ? `<div class="h-44 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div></div>` : ''}
-                    <div class="p-5 space-y-2">
-                        <h3 class="font-serif text-2xl font-bold text-red-950">${item.name}</h3>
-                        <p class="text-amber-800 text-sm font-semibold border-y border-amber-600/20 py-1 inline-block px-3">${item.time}</p>
-                        <p class="text-xs text-stone-600 leading-relaxed">${item.location}<br>${item.address}</p>
+                    <div>
+                        ${item.image ? `<div class="h-44 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div></div>` : ''}
+                        <div class="p-5 space-y-2">
+                            <h3 class="font-serif text-2xl font-bold text-red-950">${item.name}</h3>
+                            <p class="text-amber-800 text-sm font-semibold border-y border-amber-600/20 py-1 inline-block px-3">${item.time}</p>
+                            <p class="text-xs text-stone-600 leading-relaxed">${item.location}<br>${item.address}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <a href="${item.mapsUrl || '#'}" target="_blank" class="inline-flex items-center justify-center space-x-2 w-full py-2.5 bg-gradient-to-r from-red-900 to-amber-900 text-amber-100 font-bold text-xs rounded-xl hover:from-red-800 hover:to-amber-800 transition-all shadow-md">
+                            <i class="fa-solid fa-map-location-dot text-xs"></i>
+                            <span>Google Maps ${item.name}</span>
+                        </a>
                     </div>
                 `;
                 schedContainer.appendChild(card);
             });
         }
 
-        // Render Galeri Foto
         const galleryGrid = document.getElementById('gallery-grid');
         if (galleryGrid && CONFIG.gallery) {
             galleryGrid.innerHTML = '';
@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Render Amplop Digital
         const bankContainer = document.getElementById('bank-container');
         if (bankContainer && CONFIG.bankAccounts) {
             bankContainer.innerHTML = '';
@@ -163,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Render Teks Ucapan Terima Kasih dari CONFIG
         if (CONFIG.thanks) {
             if (document.getElementById('thanks-title')) document.getElementById('thanks-title').innerText = CONFIG.thanks.title || 'Maturnuwun';
             if (document.getElementById('thanks-message')) document.getElementById('thanks-message').innerText = CONFIG.thanks.message;
@@ -172,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Interactive Scroll Journey Line Effect
     window.addEventListener('scroll', () => {
         const storyContainer = document.getElementById('story-container');
         const journeyLine = document.getElementById('journey-line');
@@ -188,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Buka Undangan & Play Audio
     const btnOpen = document.getElementById('btn-open');
     const audio = document.getElementById('wedding-audio');
     const audioControl = document.getElementById('audio-control');
@@ -236,7 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal Lightbox Handlers
     const modal = document.getElementById('gallery-modal');
     const modalImg = document.getElementById('modal-img');
     const closeModalBtn = document.getElementById('close-modal');
@@ -265,7 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Envelope Interactive
     const envelopeWrapper = document.getElementById('envelope-wrapper');
     if (envelopeWrapper) {
         envelopeWrapper.addEventListener('click', () => {
@@ -273,7 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Countdown Timer
     if (typeof CONFIG !== 'undefined' && CONFIG.event?.targetCountdown) {
         const targetDate = new Date(CONFIG.event.targetCountdown).getTime();
         setInterval(() => {
@@ -288,13 +281,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-    // Fetch & Post Comments (Google Sheets Integration)
     const rsvpForm = document.getElementById('rsvp-form');
     const commentsContainer = document.getElementById('comments-container');
 
     function fetchComments() {
         if (!commentsContainer) return;
-        if (typeof CONFIG === 'undefined' || !CONFIG.scriptUrl || CONFIG.scriptUrl.includes("PASTE_URL")) {
+        if (typeof CONFIG === 'undefined' || !CONFIG.scriptUrl || CONFIG.scriptUrl.includes("PASTER_URL")) {
             commentsContainer.innerHTML = '<p class="text-xs text-stone-500 text-center">Belum ada ucapan tersimpan.</p>';
             return;
         }
@@ -341,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const status = document.getElementById('input-status').value;
             const msg = document.getElementById('input-message').value;
 
-            if (typeof CONFIG === 'undefined' || !CONFIG.scriptUrl || CONFIG.scriptUrl.includes("PASTE_URL")) {
+            if (typeof CONFIG === 'undefined' || !CONFIG.scriptUrl || CONFIG.scriptUrl.includes("PASTER_URL")) {
                 showToast("URL Database Google Script belum dipasang!");
                 return;
             }
