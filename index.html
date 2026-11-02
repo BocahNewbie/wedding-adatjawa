@@ -9,30 +9,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Jawa Klasik -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts Jawa Klasik & Kaligrafi Modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-stone-900 font-sans overflow-x-hidden selection:bg-amber-600 selection:text-white">
 
-    <!-- COVER OVERLAY (SAMPUL DEPAN LENGKUNG) -->
+    <!-- COVER OVERLAY -->
     <div id="sec-cover" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-cover bg-center bg-fixed transition-all duration-1000 ease-in-out">
-        <div class="absolute inset-0 bg-stone-950/40 backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 bg-stone-950/60 backdrop-blur-[3px]"></div>
 
         <!-- FRAME LENGKUNG JAWA DYNASTY -->
-        <div class="relative z-10 w-full max-w-md mx-auto java-arch-card p-8 text-center space-y-6 my-auto">
-            <span id="cover-title-tag" class="text-amber-800 font-semibold tracking-[0.25em] text-[11px] uppercase border-b-2 border-amber-600/40 pb-1 inline-block">The Wedding Of</span>
+        <div class="relative z-10 w-full max-w-md mx-auto java-arch-card p-8 text-center space-y-6 my-auto shadow-[0_0_40px_rgba(212,175,55,0.25)]">
+            <div class="flex items-center justify-center gap-3">
+                <span class="h-[1px] w-8 bg-amber-600/40"></span>
+                <span id="cover-title-tag" class="text-amber-800 font-semibold tracking-[0.25em] text-[11px] uppercase">The Wedding Of</span>
+                <span class="h-[1px] w-8 bg-amber-600/40"></span>
+            </div>
             
             <h1 id="cover-heading" class="font-serif text-3xl sm:text-4xl font-bold text-red-950 leading-tight"></h1>
             
             <div class="space-y-2 pt-2">
                 <p class="text-stone-600 text-xs italic">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <div class="bg-amber-100/60 border border-amber-600/30 rounded-xl p-3">
+                <div class="bg-amber-100/60 border border-amber-600/30 rounded-xl p-3 backdrop-blur-sm">
                     <span id="guest-name" class="text-lg font-bold text-red-950 capitalize">Tamu Undangan</span>
                 </div>
             </div>
 
-            <button id="btn-open" class="w-full py-3 bg-red-900 hover:bg-red-950 rounded-full text-amber-200 font-bold text-xs tracking-widest uppercase shadow-lg shadow-red-950/30 flex items-center justify-center space-x-2 transition-all">
+            <button id="btn-open" class="btn-shimmer w-full py-3.5 bg-gradient-to-r from-red-900 via-amber-900 to-red-950 hover:from-red-800 hover:to-amber-900 rounded-full text-amber-100 font-bold text-xs tracking-widest uppercase shadow-xl shadow-red-950/40 flex items-center justify-center space-x-2 transition-all duration-300 hover:scale-[1.02] active:scale-95">
                 <i class="fa-solid fa-envelope-open"></i>
                 <span>Buka Undangan</span>
             </button>
@@ -44,7 +48,7 @@
         <source src="musiksliramu.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="audio-control" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-red-900/90 border border-amber-500/60 rounded-full flex items-center justify-center text-amber-300 shadow-xl backdrop-blur-md hover:scale-110 transition-all duration-300 hidden">
+    <button id="audio-control" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-red-900/90 border border-amber-500/60 rounded-full flex items-center justify-center text-amber-300 shadow-2xl backdrop-blur-md hover:scale-110 transition-all duration-300 hidden">
         <i id="audio-icon" class="fa-solid fa-compact-disc text-xl"></i>
     </button>
 
@@ -53,30 +57,35 @@
 
         <!-- HERO SECTION -->
         <section id="sec-hero" class="relative min-h-screen flex items-center justify-center p-4 sm:p-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-stone-950/30"></div>
+            <div class="absolute inset-0 bg-stone-950/50"></div>
 
-            <div class="relative z-10 w-full max-w-md mx-auto java-arch-card p-8 text-center space-y-6 py-12 my-12">
-                <p id="hero-tag" class="text-amber-800 tracking-[0.3em] text-[11px] uppercase font-semibold border-b border-amber-600/30 pb-1 inline-block"></p>
+            <div class="relative z-10 w-full max-w-md mx-auto java-arch-card p-8 text-center space-y-6 py-12 my-12 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
+                <div class="flex items-center justify-center gap-3">
+                    <span class="h-[1px] w-8 bg-amber-600/40"></span>
+                    <p id="hero-tag" class="text-amber-800 tracking-[0.3em] text-[11px] uppercase font-semibold"></p>
+                    <span class="h-[1px] w-8 bg-amber-600/40"></span>
+                </div>
+
                 <h1 id="hero-heading" class="font-serif text-3xl sm:text-5xl font-bold text-red-950 leading-tight"></h1>
-                <p id="hero-date" class="text-stone-700 font-medium text-sm"></p>
+                <p id="hero-date" class="text-stone-700 font-medium text-sm border-y border-amber-600/20 py-2 inline-block px-4"></p>
 
                 <!-- COUNTDOWN -->
-                <div class="grid grid-cols-4 gap-2 pt-2">
-                    <div class="bg-amber-100/80 border border-amber-600/30 p-2 rounded-xl">
+                <div class="grid grid-cols-4 gap-2.5 pt-2">
+                    <div class="bg-amber-100/80 border border-amber-600/30 p-2.5 rounded-xl shadow-sm">
                         <span id="days" class="block text-xl font-bold text-red-950">00</span>
-                        <span class="text-[9px] uppercase text-stone-600">Hari</span>
+                        <span class="text-[9px] uppercase tracking-wider text-stone-600">Hari</span>
                     </div>
-                    <div class="bg-amber-100/80 border border-amber-600/30 p-2 rounded-xl">
+                    <div class="bg-amber-100/80 border border-amber-600/30 p-2.5 rounded-xl shadow-sm">
                         <span id="hours" class="block text-xl font-bold text-red-950">00</span>
-                        <span class="text-[9px] uppercase text-stone-600">Jam</span>
+                        <span class="text-[9px] uppercase tracking-wider text-stone-600">Jam</span>
                     </div>
-                    <div class="bg-amber-100/80 border border-amber-600/30 p-2 rounded-xl">
+                    <div class="bg-amber-100/80 border border-amber-600/30 p-2.5 rounded-xl shadow-sm">
                         <span id="minutes" class="block text-xl font-bold text-red-950">00</span>
-                        <span class="text-[9px] uppercase text-stone-600">Menit</span>
+                        <span class="text-[9px] uppercase tracking-wider text-stone-600">Menit</span>
                     </div>
-                    <div class="bg-amber-100/80 border border-amber-600/30 p-2 rounded-xl">
+                    <div class="bg-amber-100/80 border border-amber-600/30 p-2.5 rounded-xl shadow-sm">
                         <span id="seconds" class="block text-xl font-bold text-red-950">00</span>
-                        <span class="text-[9px] uppercase text-stone-600">Detik</span>
+                        <span class="text-[9px] uppercase tracking-wider text-stone-600">Detik</span>
                     </div>
                 </div>
             </div>
@@ -84,17 +93,17 @@
 
         <!-- QUOTE SECTION -->
         <section id="sec-quote" class="relative py-16 px-4 sm:px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-stone-950/40"></div>
+            <div class="absolute inset-0 bg-stone-950/50"></div>
             <div class="relative z-10 max-w-md mx-auto java-arch-card p-8 text-center space-y-4">
-                <i class="fa-solid fa-quote-left text-2xl text-amber-700 float-item"></i>
+                <i class="fa-solid fa-quote-left text-3xl text-amber-600/60 float-item"></i>
                 <p id="quote-text" class="font-serif italic text-sm text-stone-800 leading-relaxed"></p>
-                <span id="quote-source" class="block text-xs text-red-950 font-bold tracking-widest uppercase"></span>
+                <span id="quote-source" class="block text-xs text-red-950 font-bold tracking-widest uppercase pt-2"></span>
             </div>
         </section>
 
         <!-- PROFIL MEMPELAI SECTION -->
         <section id="sec-mempelai" class="relative py-16 px-4 sm:px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-stone-950/40"></div>
+            <div class="absolute inset-0 bg-stone-950/50"></div>
             <div class="relative z-10 max-w-2xl mx-auto java-arch-card p-6 sm:p-10 space-y-8">
                 <div id="profile-container"></div>
             </div>
@@ -102,7 +111,7 @@
 
         <!-- RANGKAIAN ACARA -->
         <section id="sec-acara" class="relative py-16 px-4 sm:px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-stone-950/40"></div>
+            <div class="absolute inset-0 bg-stone-950/50"></div>
             <div class="relative z-10 max-w-2xl mx-auto java-arch-card p-6 sm:p-10 space-y-8">
                 <div class="text-center space-y-2">
                     <h2 class="font-serif text-3xl font-bold text-red-950">Rangkaian Acara</h2>
@@ -110,8 +119,8 @@
                 </div>
                 <div id="schedule-container" class="grid md:grid-cols-2 gap-6"></div>
                 <div class="text-center pt-2">
-                    <a id="btn-maps" href="#" target="_blank" class="inline-flex items-center space-x-2 px-6 py-3 bg-red-900 text-amber-200 font-bold text-xs rounded-full hover:bg-red-950 transition-all shadow-md">
-                        <i class="fa-solid fa-map-location-dot"></i>
+                    <a id="btn-maps" href="#" target="_blank" class="inline-flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-red-900 to-amber-900 text-amber-100 font-bold text-xs rounded-full hover:from-red-800 hover:to-amber-800 transition-all shadow-lg hover:scale-105">
+                        <i class="fa-solid fa-map-location-dot text-sm"></i>
                         <span>Petunjuk Lokasi (Google Maps)</span>
                     </a>
                 </div>
@@ -120,7 +129,7 @@
 
         <!-- GALERI FOTO -->
         <section id="sec-galeri" class="relative py-16 px-4 sm:px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-stone-950/40"></div>
+            <div class="absolute inset-0 bg-stone-950/50"></div>
             <div class="relative z-10 max-w-2xl mx-auto java-arch-card p-6 sm:p-10 space-y-8">
                 <div class="text-center space-y-2">
                     <h2 class="font-serif text-3xl font-bold text-red-950">Galeri Foto</h2>
@@ -131,7 +140,7 @@
 
         <!-- AMPLOP DIGITAL -->
         <section id="sec-amplop" class="relative py-16 px-4 sm:px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-stone-950/40"></div>
+            <div class="absolute inset-0 bg-stone-950/50"></div>
             <div class="relative z-10 max-w-md mx-auto java-arch-card p-6 sm:p-10 text-center space-y-6">
                 <div class="space-y-2">
                     <h2 class="font-serif text-3xl font-bold text-red-950">Amplop Digital</h2>
@@ -140,11 +149,11 @@
 
                 <div id="envelope-wrapper" class="envelope-container">
                     <div class="envelope-box">
-                        <div class="w-14 h-14 bg-amber-100 border border-amber-500 rounded-full flex items-center justify-center text-red-950 text-xl mx-auto transition-transform duration-500 envelope-icon">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-100 to-amber-200 border border-amber-500 rounded-full flex items-center justify-center text-red-950 text-xl mx-auto shadow-md transition-transform duration-500 envelope-icon">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
-                        <p class="text-sm font-bold text-amber-100 mt-3">Buka Amplop</p>
-                        <p class="text-[10px] text-amber-300">Tanda Kasih</p>
+                        <p class="text-sm font-bold text-amber-100 mt-3 tracking-wide">Buka Amplop</p>
+                        <p class="text-[10px] text-amber-300/80 uppercase tracking-widest">Tanda Kasih</p>
                     </div>
 
                     <div id="bank-container" class="envelope-card-content space-y-3"></div>
@@ -154,30 +163,30 @@
 
         <!-- RSVP & UCAPAN -->
         <section id="sec-rsvp" class="relative py-16 px-4 sm:px-6 bg-cover bg-center bg-fixed">
-            <div class="absolute inset-0 bg-stone-950/40"></div>
+            <div class="absolute inset-0 bg-stone-950/50"></div>
             <div class="relative z-10 max-w-md mx-auto java-arch-card p-6 sm:p-8 space-y-8">
                 <div class="text-center space-y-2">
                     <h2 class="font-serif text-3xl font-bold text-red-950">Ucapan & Doa</h2>
                     <p class="text-stone-600 text-xs">Konfirmasi Kehadiran & Kirim Pesan</p>
                 </div>
 
-                <form id="rsvp-form" class="space-y-3">
+                <form id="rsvp-form" class="space-y-3.5">
                     <div>
                         <label class="block text-xs font-semibold text-stone-700 mb-1">Nama</label>
-                        <input type="text" id="input-name" required class="w-full bg-amber-50 border border-amber-600/40 rounded-xl px-3.5 py-2 text-stone-900 text-xs focus:outline-none focus:border-red-900">
+                        <input type="text" id="input-name" required class="w-full bg-amber-50/80 border border-amber-600/40 rounded-xl px-3.5 py-2.5 text-stone-900 text-xs focus:outline-none focus:border-red-900 focus:ring-1 focus:ring-red-900 transition-all">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-stone-700 mb-1">Konfirmasi Kehadiran</label>
-                        <select id="input-status" class="w-full bg-amber-50 border border-amber-600/40 rounded-xl px-3.5 py-2 text-stone-900 text-xs focus:outline-none focus:border-red-900">
+                        <select id="input-status" class="w-full bg-amber-50/80 border border-amber-600/40 rounded-xl px-3.5 py-2.5 text-stone-900 text-xs focus:outline-none focus:border-red-900 focus:ring-1 focus:ring-red-900 transition-all">
                             <option value="Hadir">Hadir</option>
                             <option value="Tidak Hadir">Tidak Hadir</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-stone-700 mb-1">Pesan / Ucapan</label>
-                        <textarea id="input-message" rows="3" required class="w-full bg-amber-50 border border-amber-600/40 rounded-xl px-3.5 py-2 text-stone-900 text-xs focus:outline-none focus:border-red-900"></textarea>
+                        <textarea id="input-message" rows="3" required class="w-full bg-amber-50/80 border border-amber-600/40 rounded-xl px-3.5 py-2.5 text-stone-900 text-xs focus:outline-none focus:border-red-900 focus:ring-1 focus:ring-red-900 transition-all"></textarea>
                     </div>
-                    <button type="submit" class="w-full py-2.5 bg-red-900 hover:bg-red-950 text-amber-200 font-bold rounded-xl text-xs shadow-md">Kirim Ucapan</button>
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-red-900 to-amber-900 hover:from-red-950 hover:to-amber-950 text-amber-200 font-bold rounded-xl text-xs shadow-md transition-all hover:scale-[1.01]">Kirim Ucapan</button>
                 </form>
 
                 <div id="comments-container" class="space-y-3 max-h-72 overflow-y-auto pr-1"></div>
@@ -185,7 +194,7 @@
         </section>
 
         <!-- FOOTER -->
-        <footer class="py-8 text-center bg-stone-950 text-xs text-amber-200/60 flex flex-col items-center justify-center space-y-2">
+        <footer class="py-8 text-center bg-stone-950 text-xs text-amber-200/60 flex flex-col items-center justify-center space-y-2 border-t border-amber-600/20">
             <p>Terima Kasih Atas Kehadiran & Doa Restu Anda</p>
             <div class="pt-1">
                 <span class="neon-credit">Created by Bocah Newbie</span>
@@ -193,6 +202,20 @@
         </footer>
 
     </main>
+
+    <!-- LIGHTBOX MODAL UNTUK GALERI FOTO -->
+    <div id="gallery-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <button id="close-modal" class="absolute top-6 right-6 text-white text-3xl hover:text-amber-400 transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="modal-img" src="" class="max-w-full max-h-[85vh] rounded-2xl border-2 border-amber-500/40 shadow-2xl object-contain">
+    </div>
+
+    <!-- TOAST NOTIFICATION COPY REKENING -->
+    <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-stone-900/90 border border-amber-500/50 text-amber-200 text-xs px-5 py-2.5 rounded-full shadow-2xl backdrop-blur-md transition-all duration-300 opacity-0 pointer-events-none flex items-center space-x-2">
+        <i class="fa-solid fa-circle-check text-amber-400"></i>
+        <span id="toast-msg">Nomor rekening berhasil disalin!</span>
+    </div>
 
     <script src="config.js"></script>
     <script src="script.js"></script>
