@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="p-5 pt-0">
                         <a href="${item.mapsUrl || '#'}" target="_blank" class="inline-flex items-center justify-center space-x-2 w-full py-2.5 bg-gradient-to-r from-red-900 to-amber-900 text-amber-100 font-bold text-xs rounded-xl hover:from-red-800 hover:to-amber-800 transition-all shadow-md">
                             <i class="fa-solid fa-map-location-dot text-xs"></i>
-                            <span>Google Maps ${item.name}</span>
+                            <span>Lokasi ${item.name}</span>
                         </a>
                     </div>
                 `;
