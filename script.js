@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. INTEGRASI CONFIG & TAMPILAN UTAMA
     if (typeof CONFIG !== 'undefined') {
+        // Tambahkan di dalam fungsi rendering background script.js:
         const bgMap = {
             'sec-cover': CONFIG.backgrounds?.cover,
             'sec-hero': CONFIG.backgrounds?.hero,
@@ -13,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'sec-rsvp': CONFIG.backgrounds?.rsvp,
             'sec-thanks': CONFIG.backgrounds?.thanks
         };
+
+        // Pasang background khusus pada kartu terima kasih jika ada:
+        const thanksCardBg = document.getElementById('thanks-bg-card');
+        if (thanksCardBg && CONFIG.backgrounds?.thanks) {
+            thanksCardBg.style.backgroundImage = `url('${CONFIG.backgrounds.thanks}')`;
+        }
+        
         for (const [id, url] of Object.entries(bgMap)) {
             const el = document.getElementById(id);
             if (el && url) el.style.backgroundImage = `url('${url}')`;
