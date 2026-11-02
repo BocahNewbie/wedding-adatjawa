@@ -15,6 +15,7 @@ const CONFIG = {
         hero: "",
         quote: "",
         mempelai: "",
+        story: "",
         acara: "",
         galeri: "",
         amplop: "",
@@ -37,6 +38,25 @@ const CONFIG = {
             instagram: "@iamqueenvanilla"
         }
     },
+
+    // FITUR BARU: PERJALANAN CINTA
+    loveStory: [
+        {
+            year: "2021",
+            title: "Awal Pertemuan",
+            description: "Takdir mempertemukan kami di sebuah acara perkuliahan. Dari sapaan sederhana hingga menjadi teman diskusi yang hangat."
+        },
+        {
+            year: "2023",
+            title: "Mengikat Janji Komitmen",
+            description: "Memutuskan untuk melangkah bersama, saling mendukung dalam suka dan duka, serta membangun impian masa depan."
+        },
+        {
+            year: "2026",
+            title: "Lamaran & Restu Keluarga",
+            description: "Dengan izin Allah SWT dan restu dari kedua orang tua, kami mengikat niat suci menuju jenjang pernikahan."
+        }
+    ],
 
     schedules: [
         {
