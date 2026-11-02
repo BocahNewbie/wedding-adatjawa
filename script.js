@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'sec-acara': CONFIG.backgrounds?.acara,
             'sec-galeri': CONFIG.backgrounds?.galeri,
             'sec-amplop': CONFIG.backgrounds?.amplop,
-            'sec-rsvp': CONFIG.backgrounds?.rsvp
+            'sec-rsvp': CONFIG.backgrounds?.rsvp,
+            'sec-thanks': CONFIG.backgrounds?.thanks
         };
         for (const [id, url] of Object.entries(bgMap)) {
             const el = document.getElementById(id);
@@ -33,14 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Render Profile Mempelai Jawa Dynasty (Simetris 100%)
         const coverHeading = document.getElementById('cover-heading');
         const heroHeading = document.getElementById('hero-heading');
+        const thanksCouples = document.getElementById('thanks-couples');
         const profileContainer = document.getElementById('profile-container');
 
         if (CONFIG.type === 'wedding' && CONFIG.wedding) {
             const p = CONFIG.wedding.pria;
             const w = CONFIG.wedding.wanita;
             
-            if (coverHeading) coverHeading.innerHTML = `<span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-xl">&amp;</span> <span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
-            if (heroHeading) heroHeading.innerHTML = `<span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-2xl">&amp;</span> <span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
+            const pCall = p.panggilan || p.nama.split(',')[0];
+            const wCall = w.panggilan || w.nama.split(',')[0];
+
+            if (coverHeading) coverHeading.innerHTML = `<span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${pCall}</span> <span class="text-amber-600 font-serif text-xl">&amp;</span> <span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${wCall}</span>`;
+            if (heroHeading) heroHeading.innerHTML = `<span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${pCall}</span> <span class="text-amber-600 font-serif text-2xl">&amp;</span> <span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${wCall}</span>`;
+            if (thanksCouples) thanksCouples.innerText = `${pCall} & ${wCall}`;
 
             if (profileContainer) {
                 profileContainer.innerHTML = `
