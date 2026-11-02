@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return `https://instagram.com/${cleanHandle}`;
         };
 
-        // Render Profile Mempelai Jawa Dynasty
+        // Render Profile Mempelai Jawa Dynasty (Simetris 100%)
         const coverHeading = document.getElementById('cover-heading');
         const heroHeading = document.getElementById('hero-heading');
         const profileContainer = document.getElementById('profile-container');
@@ -42,54 +42,53 @@ document.addEventListener('DOMContentLoaded', () => {
             if (coverHeading) coverHeading.innerHTML = `<span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-xl">&amp;</span> <span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
             if (heroHeading) heroHeading.innerHTML = `<span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-2xl">&amp;</span> <span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
 
-            // Cari bagian profileContainer.innerHTML di script.js dan perbarui class internalnya menjadi seperti ini:
+            if (profileContainer) {
+                profileContainer.innerHTML = `
+                    <div class="text-center space-y-3 mb-8">
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-red-950">Pasangan Mempelai</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                        <!-- Kartu Mempelai Pria -->
+                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center shadow-md hover:shadow-xl transition-all h-full flex flex-col justify-between space-y-4">
+                            <div class="space-y-4">
+                                <div class="relative w-36 h-36 mx-auto">
+                                    <img src="${p.foto}" class="w-full h-full rounded-full object-cover border-4 border-amber-600 shadow-lg">
+                                    <div class="absolute inset-0 rounded-full border-2 border-amber-400/40 transform scale-105"></div>
+                                </div>
+                                <div class="min-h-[72px] flex items-center justify-center">
+                                    <h3 class="font-serif text-2xl font-bold text-red-950 leading-snug">${p.nama}</h3>
+                                </div>
+                                <p class="text-xs text-stone-600 leading-relaxed">${p.orangTua}</p>
+                            </div>
+                            <div class="pt-2">
+                                <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-800 hover:text-amber-950 transition-colors bg-amber-100/60 px-3.5 py-1.5 rounded-full border border-amber-600/20">
+                                    <i class="fa-brands fa-instagram text-amber-700"></i><span>${p.instagram}</span>
+                                </a>
+                            </div>
+                        </div>
 
-if (profileContainer) {
-    profileContainer.innerHTML = `
-        <div class="text-center space-y-3 mb-8">
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-red-950">Pasangan Mempelai</h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8 items-stretch">
-            <!-- Kartu Mempelai Pria -->
-            <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center shadow-md hover:shadow-xl transition-all h-full flex flex-col justify-between space-y-4">
-                <div class="space-y-4">
-                    <div class="relative w-36 h-36 mx-auto">
-                        <img src="${p.foto}" class="w-full h-full rounded-full object-cover border-4 border-amber-600 shadow-lg">
-                        <div class="absolute inset-0 rounded-full border-2 border-amber-400/40 transform scale-105"></div>
+                        <!-- Kartu Mempelai Wanita -->
+                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center shadow-md hover:shadow-xl transition-all h-full flex flex-col justify-between space-y-4">
+                            <div class="space-y-4">
+                                <div class="relative w-36 h-36 mx-auto">
+                                    <img src="${w.foto}" class="w-full h-full rounded-full object-cover border-4 border-amber-600 shadow-lg">
+                                    <div class="absolute inset-0 rounded-full border-2 border-amber-400/40 transform scale-105"></div>
+                                </div>
+                                <div class="min-h-[72px] flex items-center justify-center">
+                                    <h3 class="font-serif text-2xl font-bold text-red-950 leading-snug">${w.nama}</h3>
+                                </div>
+                                <p class="text-xs text-stone-600 leading-relaxed">${w.orangTua}</p>
+                            </div>
+                            <div class="pt-2">
+                                <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-800 hover:text-amber-950 transition-colors bg-amber-100/60 px-3.5 py-1.5 rounded-full border border-amber-600/20">
+                                    <i class="fa-brands fa-instagram text-amber-700"></i><span>${w.instagram}</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="min-h-[72px] flex items-center justify-center">
-                        <h3 class="font-serif text-2xl font-bold text-red-950 leading-snug">${p.nama}</h3>
-                    </div>
-                    <p class="text-xs text-stone-600 leading-relaxed">${p.orangTua}</p>
-                </div>
-                <div class="pt-2">
-                    <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-800 hover:text-amber-950 transition-colors bg-amber-100/60 px-3.5 py-1.5 rounded-full border border-amber-600/20">
-                        <i class="fa-brands fa-instagram text-amber-700"></i><span>${p.instagram}</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Kartu Mempelai Wanita -->
-            <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center shadow-md hover:shadow-xl transition-all h-full flex flex-col justify-between space-y-4">
-                <div class="space-y-4">
-                    <div class="relative w-36 h-36 mx-auto">
-                        <img src="${w.foto}" class="w-full h-full rounded-full object-cover border-4 border-amber-600 shadow-lg">
-                        <div class="absolute inset-0 rounded-full border-2 border-amber-400/40 transform scale-105"></div>
-                    </div>
-                    <div class="min-h-[72px] flex items-center justify-center">
-                        <h3 class="font-serif text-2xl font-bold text-red-950 leading-snug">${w.nama}</h3>
-                    </div>
-                    <p class="text-xs text-stone-600 leading-relaxed">${w.orangTua}</p>
-                </div>
-                <div class="pt-2">
-                    <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-800 hover:text-amber-950 transition-colors bg-amber-100/60 px-3.5 py-1.5 rounded-full border border-amber-600/20">
-                        <i class="fa-brands fa-instagram text-amber-700"></i><span>${w.instagram}</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    `;
-}
+                `;
+            }
+        }
 
         // Render Perjalanan Cinta (Story Timeline)
         const storyContainer = document.getElementById('story-container');
@@ -370,7 +369,7 @@ if (profileContainer) {
             });
         });
     }
-};
+});
 
 function escapeHtml(text) {
     return text ? text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : '';
