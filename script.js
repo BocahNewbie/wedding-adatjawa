@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. INTEGRASI CONFIG & TAMPILAN UTAMA
     if (typeof CONFIG !== 'undefined') {
+        // Terapkan background utama dari config.js ke body secara dinamis
+        if (CONFIG.backgrounds && CONFIG.backgrounds.globalPattern) {
+            document.body.style.backgroundImage = `url('${CONFIG.backgrounds.globalPattern}')`;
+        }
+
         if (document.getElementById('cover-title-tag')) document.getElementById('cover-title-tag').innerText = CONFIG.event.title;
         if (document.getElementById('hero-tag')) document.getElementById('hero-tag').innerText = CONFIG.event.title;
         if (document.getElementById('hero-date')) document.getElementById('hero-date').innerText = CONFIG.event.dateText;
