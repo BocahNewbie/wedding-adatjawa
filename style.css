@@ -18,15 +18,14 @@ html {
     background: #d4af37;
 }
 
-/* BACKGROUND PATTERN BATIK KAWUNG MURNI FIXED GLOBAL */
 /* BACKGROUND UTAMA FIX SATU HALAMAN PENUH */
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #3b0910;
-    background-size: cover;          /* Membuat gambar menutupi seluruh layar */
-    background-position: center;     /* Posisi gambar di tengah */
-    background-repeat: no-repeat;    /* Mencegah gambar berulang / banyak */
-    background-attachment: fixed;    /* Mengunci background agar tidak ikut scroll */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1, h2, h3, .font-serif {
@@ -37,13 +36,14 @@ h1, h2, h3, .font-serif {
     font-family: 'Great Vibes', cursive;
 }
 
-/* FRAME LENGKUNG JAWA DYNASTY UNIFORM */
+/* FRAME LENGKUNG JAWA DYNASTY UNIFORM & POSISI TEKS AMAN DI HP */
 .java-arch-card {
     background: rgba(253, 248, 240, 0.96);
     border: 2px solid #d4af37;
     border-radius: 120px 120px 24px 24px;
     color: #3b0910;
     position: relative;
+    padding-top: 3.5rem; /* Menurunkan posisi konten atas agar tidak keluar dari lengkungan */
     box-shadow: 
         0 25px 60px rgba(0, 0, 0, 0.8),
         0 0 40px rgba(212, 175, 55, 0.2),
@@ -92,12 +92,13 @@ section.relative:not(:last-of-type)::before {
     z-index: 16;
 }
 
-/* KARTU THANKS KHUSUS: TRANSPARAN TRANSPOSISI KE SOLID */
+/* KARTU THANKS KHUSUS: TRANSPARANSI DITURUNKAN DI HP */
 .thanks-arch-card {
     border: 2px solid #d4af37;
     border-radius: 120px 120px 24px 24px;
     position: relative;
     overflow: hidden;
+    padding-top: 3.5rem;
     box-shadow: 
         0 25px 60px rgba(0, 0, 0, 0.8),
         0 0 40px rgba(212, 175, 55, 0.2),
@@ -105,15 +106,15 @@ section.relative:not(:last-of-type)::before {
 }
 
 .thanks-top-glass {
-    background: rgba(59, 9, 16, 0.45);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(59, 9, 16, 0.25); /* Transparansi diturunkan agar background utama lebih nampak jelas */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .thanks-bottom-solid {
-    background: linear-gradient(180deg, rgba(253, 248, 240, 0.2) 0%, rgba(253, 248, 240, 0.96) 35%, rgba(253, 248, 240, 0.98) 100%);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, rgba(253, 248, 240, 0.1) 0%, rgba(253, 248, 240, 0.94) 30%, rgba(253, 248, 240, 0.98) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 /* EFEK TULISAN NEON EMAS */
