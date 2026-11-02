@@ -70,7 +70,7 @@ const CONFIG = {
             mapsUrl: "https://maps.app.goo.gl/koordinatAkad" // Ganti link maps akad di sini
         },
         {
-            name: "Resepsi Adat Jawa",
+            name: "Resepsi",
             time: "11.00 WIB - Selesai",
             location: "Rumah Mempelai Wanita",
             address: "Banjar, Jawa Barat",
