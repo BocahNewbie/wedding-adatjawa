@@ -6,19 +6,17 @@ const CONFIG = {
         dateText: "Sabtu, 16 Januari 2027",
         targetCountdown: "January 16, 2027 08:00:00",
         quote: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya.",
-        quoteSource: "Q.S. Ar-Rum: 21",
-        mapsUrl: "https://maps.google.com"
+        quoteSource: "Q.S. Ar-Rum: 21"
     },
 
-    // KELOLA SEMUA BACKGROUND & GAMBAR DI SINI
+    // BACKGROUND UTAMA GLOBAL
     backgrounds: {
-        // Background utama global (bisa berupa URL foto/gambar atau SVG Data-URI pattern)
         globalPattern: "background.jpeg"
     },
 
     // TEKS UCAPAN TERIMA KASIH
     thanks: {
-        title: "Terima Kasih",
+        title: "Maturnuwun",
         message: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.",
         subtext: "Kami Yang Berbahagia,",
         family: "Beserta Keluarga Besar"
@@ -27,7 +25,7 @@ const CONFIG = {
     // DATA MEMPELAI & FOTO PROFIL
     wedding: {
         pria: {
-            nama: "M. Adzka Ramdhani",
+            nama: "M. Adzka Ramdhani, S.E., M.M.",
             panggilan: "Adzka",
             orangTua: "Putra Pertama dari Bapak Kamaludin & Ibu Dra. Ida Srinurwenda",
             foto: "Pria.jpeg",
@@ -61,25 +59,27 @@ const CONFIG = {
         }
     ],
 
-    // JADWAL ACARA & FOTO LOKASI
+    // JADWAL ACARA & GOOGLE MAPS MASING-MASING TEMPAT
     schedules: [
         {
             name: "Akad Nikah",
             time: "08.00 - 10.00 WIB",
             location: "Pendopo Ageng Keraton",
             address: "Banjar, Jawa Barat",
-            image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800",
+            mapsUrl: "https://maps.app.goo.gl/koordinatAkad" // Ganti link maps akad di sini
         },
         {
             name: "Resepsi Adat Jawa",
             time: "11.00 WIB - Selesai",
             location: "Rumah Mempelai Wanita",
             address: "Banjar, Jawa Barat",
-            image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800"
+            image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800",
+            mapsUrl: "https://maps.app.goo.gl/koordinatResepsi" // Ganti link maps resepsi di sini
         }
     ],
 
-    // GALERI FOTO (BISA TAMBAH ATAU KURANGI LINK DENGAN MUDAH)
+    // GALERI FOTO
     gallery: [
         "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
         "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800",
@@ -87,11 +87,11 @@ const CONFIG = {
         "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800"
     ],
 
-    // LOGO BANK & DETAIL REKENING
+    // AMPLOP DIGITAL
     bankAccounts: [
         { 
             bank: "BCA", 
-            icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg",
+            icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/BANK_BCA_LOGO.svg",
             number: "1234567890", 
             owner: "Muhammad Adzka Ramdhani" 
         },
