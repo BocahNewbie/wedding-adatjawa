@@ -37,8 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (CONFIG.type === 'wedding' && CONFIG.wedding) {
             const p = CONFIG.wedding.pria;
             const w = CONFIG.wedding.wanita;
-            if (coverHeading) coverHeading.innerHTML = `${p.nama.split(',')[0]} <br><span class="text-amber-600 font-serif text-2xl">&</span><br> ${w.nama.split(',')[0]}`;
-            if (heroHeading) heroHeading.innerHTML = `${p.nama.split(',')[0]} <br><span class="text-amber-600 font-serif text-3xl">&</span><br> ${w.nama.split(',')[0]}`;
+            
+            // Nama Panggilan dengan Kaligrafi Estetik
+            if (coverHeading) coverHeading.innerHTML = `<span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-xl">&amp;</span> <span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
+            if (heroHeading) heroHeading.innerHTML = `<span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-2xl">&amp;</span> <span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
 
             if (profileContainer) {
                 profileContainer.innerHTML = `
@@ -46,20 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-red-950">Pasangan Mempelai</h2>
                     </div>
                     <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center space-y-4 shadow-md">
-                            <img src="${p.foto}" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-amber-600 shadow-lg">
+                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center space-y-4 shadow-md hover:shadow-xl transition-all">
+                            <div class="relative w-36 h-36 mx-auto">
+                                <img src="${p.foto}" class="w-full h-full rounded-full object-cover border-4 border-amber-600 shadow-lg">
+                                <div class="absolute inset-0 rounded-full border-2 border-amber-400/40 transform scale-105"></div>
+                            </div>
                             <h3 class="font-serif text-2xl font-bold text-red-950">${p.nama}</h3>
-                            <p class="text-xs text-stone-600">${p.orangTua}</p>
-                            <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-700 hover:text-amber-900 transition-colors">
-                                <i class="fa-brands fa-instagram"></i><span>${p.instagram}</span>
+                            <p class="text-xs text-stone-600 leading-relaxed">${p.orangTua}</p>
+                            <a href="${getIgUrl(p.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-800 hover:text-amber-950 transition-colors bg-amber-100/60 px-3 py-1.5 rounded-full border border-amber-600/20">
+                                <i class="fa-brands fa-instagram text-amber-700"></i><span>${p.instagram}</span>
                             </a>
                         </div>
-                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center space-y-4 shadow-md">
-                            <img src="${w.foto}" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-amber-600 shadow-lg">
+                        <div class="bg-amber-50/80 border border-amber-600/30 p-6 rounded-3xl text-center space-y-4 shadow-md hover:shadow-xl transition-all">
+                            <div class="relative w-36 h-36 mx-auto">
+                                <img src="${w.foto}" class="w-full h-full rounded-full object-cover border-4 border-amber-600 shadow-lg">
+                                <div class="absolute inset-0 rounded-full border-2 border-amber-400/40 transform scale-105"></div>
+                            </div>
                             <h3 class="font-serif text-2xl font-bold text-red-950">${w.nama}</h3>
-                            <p class="text-xs text-stone-600">${w.orangTua}</p>
-                            <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-700 hover:text-amber-900 transition-colors">
-                                <i class="fa-brands fa-instagram"></i><span>${w.instagram}</span>
+                            <p class="text-xs text-stone-600 leading-relaxed">${w.orangTua}</p>
+                            <a href="${getIgUrl(w.instagram)}" target="_blank" class="inline-flex items-center space-x-2 text-xs text-amber-800 hover:text-amber-950 transition-colors bg-amber-100/60 px-3 py-1.5 rounded-full border border-amber-600/20">
+                                <i class="fa-brands fa-instagram text-amber-700"></i><span>${w.instagram}</span>
                             </a>
                         </div>
                     </div>
@@ -73,27 +81,33 @@ document.addEventListener('DOMContentLoaded', () => {
             schedContainer.innerHTML = '';
             CONFIG.schedules.forEach(item => {
                 const card = document.createElement('div');
-                card.className = 'bg-amber-50/90 border border-amber-600/30 rounded-2xl overflow-hidden shadow-lg text-center space-y-4 group';
+                card.className = 'bg-amber-50/90 border border-amber-600/30 rounded-2xl overflow-hidden shadow-lg text-center space-y-4 group transition-all duration-300 hover:-translate-y-1';
                 card.innerHTML = `
-                    ${item.image ? `<div class="h-40 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>` : ''}
+                    ${item.image ? `<div class="h-44 w-full overflow-hidden relative"><img src="${item.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div></div>` : ''}
                     <div class="p-5 space-y-2">
                         <h3 class="font-serif text-2xl font-bold text-red-950">${item.name}</h3>
-                        <p class="text-amber-800 text-sm font-semibold">${item.time}</p>
-                        <p class="text-xs text-stone-600">${item.location}<br>${item.address}</p>
+                        <p class="text-amber-800 text-sm font-semibold border-y border-amber-600/20 py-1 inline-block px-3">${item.time}</p>
+                        <p class="text-xs text-stone-600 leading-relaxed">${item.location}<br>${item.address}</p>
                     </div>
                 `;
                 schedContainer.appendChild(card);
             });
         }
 
-        // Render Galeri Foto
+        // Render Galeri Foto dengan Modal Lightbox
         const galleryGrid = document.getElementById('gallery-grid');
         if (galleryGrid && CONFIG.gallery) {
             galleryGrid.innerHTML = '';
             CONFIG.gallery.forEach(url => {
                 const wrap = document.createElement('div');
-                wrap.className = 'overflow-hidden rounded-2xl border-2 border-amber-600/40 shadow-md group';
-                wrap.innerHTML = `<img src="${url}" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500">`;
+                wrap.className = 'overflow-hidden rounded-2xl border-2 border-amber-600/40 shadow-md group cursor-pointer relative';
+                wrap.innerHTML = `
+                    <img src="${url}" class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-stone-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                `;
+                wrap.addEventListener('click', () => openGalleryModal(url));
                 galleryGrid.appendChild(wrap);
             });
         }
@@ -104,20 +118,49 @@ document.addEventListener('DOMContentLoaded', () => {
             bankContainer.innerHTML = '';
             CONFIG.bankAccounts.forEach((acc, idx) => {
                 const el = document.createElement('div');
-                el.className = 'bg-amber-50/95 border border-amber-600/40 p-5 rounded-2xl space-y-2 flex flex-col items-center justify-center shadow-md';
+                el.className = 'bg-amber-50/95 border border-amber-600/40 p-5 rounded-2xl space-y-2 flex flex-col items-center justify-center shadow-md hover:shadow-lg transition-all';
                 el.innerHTML = `
                     <div class="h-8 flex items-center justify-center mb-1">
                         ${acc.icon ? `<img src="${acc.icon}" alt="${acc.bank}" class="h-7 object-contain max-w-[100px]">` : `<span class="text-xs font-bold text-red-950 uppercase">${acc.bank}</span>`}
                     </div>
-                    <p id="bank-num-${idx}" class="text-xl font-mono font-bold text-red-950">${acc.number}</p>
+                    <p id="bank-num-${idx}" class="text-xl font-mono font-bold text-red-950 tracking-wider">${acc.number}</p>
                     <p class="text-xs text-stone-600">a.n. ${acc.owner}</p>
-                    <button onclick="copyAccNumber('bank-num-${idx}')" class="px-4 py-1.5 bg-red-900 hover:bg-red-950 text-amber-200 text-xs rounded-lg flex items-center space-x-2 transition-all">
+                    <button onclick="copyAccNumber('bank-num-${idx}')" class="px-4 py-1.5 bg-gradient-to-r from-red-900 to-amber-900 hover:from-red-950 hover:to-amber-950 text-amber-200 text-xs font-semibold rounded-lg flex items-center space-x-2 transition-all shadow-sm active:scale-95">
                         <i class="fa-solid fa-copy"></i> <span>Salin Rekening</span>
                     </button>
                 `;
                 bankContainer.appendChild(el);
             });
         }
+    }
+
+    // Modal Lightbox Handlers
+    const modal = document.getElementById('gallery-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModalBtn = document.getElementById('close-modal');
+
+    function openGalleryModal(url) {
+        if (modal && modalImg) {
+            modalImg.src = url;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
     }
 
     // Nama Tamu Dinamis
@@ -246,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const msg = document.getElementById('input-message').value;
 
             if (typeof CONFIG === 'undefined' || !CONFIG.scriptUrl || CONFIG.scriptUrl.includes("PASTE_URL")) {
-                alert("URL Database Google Script belum dipasang!");
+                showToast("URL Database Google Script belum dipasang!");
                 return;
             }
 
@@ -261,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(res => res.json())
             .then(res => {
-                alert('Terima kasih! Ucapan Anda telah tersimpan.');
+                showToast('Terima kasih! Ucapan Anda telah tersimpan.');
                 document.getElementById('input-message').value = '';
                 submitBtn.disabled = false;
                 submitBtn.innerText = "Kirim Ucapan";
@@ -269,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(err => {
                 console.error("Gagal mengirim ucapan:", err);
-                alert('Terjadi kesalahan saat menyimpan ucapan.');
+                showToast('Terjadi kesalahan saat menyimpan ucapan.');
                 submitBtn.disabled = false;
                 submitBtn.innerText = "Kirim Ucapan";
             });
@@ -281,11 +324,25 @@ function escapeHtml(text) {
     return text ? text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : '';
 }
 
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    if (toast && toastMsg) {
+        toastMsg.innerText = message;
+        toast.classList.remove('opacity-0', 'pointer-events-none');
+        toast.classList.add('opacity-100');
+        setTimeout(() => {
+            toast.classList.remove('opacity-100');
+            toast.classList.add('opacity-0', 'pointer-events-none');
+        }, 3000);
+    }
+}
+
 function copyAccNumber(id) {
     const el = document.getElementById(id);
     if (el) {
         navigator.clipboard.writeText(el.innerText).then(() => {
-            alert('Nomor rekening berhasil disalin!');
+            showToast('Nomor rekening berhasil disalin!');
         });
     }
 }
