@@ -13,12 +13,12 @@ const CONFIG = {
     // KELOLA SEMUA BACKGROUND & GAMBAR DI SINI
     backgrounds: {
         // Background utama global (bisa berupa URL foto/gambar atau SVG Data-URI pattern)
-        globalPattern: "https://unsplash.com/id/foto/seorang-pengantin-berjalan-di-atas-bukit-IfjHaIoAoqE"
+        globalPattern: "background.jpg"
     },
 
     // TEKS UCAPAN TERIMA KASIH
     thanks: {
-        title: "Maturnuwun",
+        title: "Terima Kasih",
         message: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.",
         subtext: "Kami Yang Berbahagia,",
         family: "Beserta Keluarga Besar"
@@ -30,14 +30,14 @@ const CONFIG = {
             nama: "M. Adzka Ramdhani",
             panggilan: "Adzka",
             orangTua: "Putra Pertama dari Bapak Kamaludin & Ibu Dra. Ida Srinurwenda",
-            foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500",
+            foto: "pria.jpg",
             instagram: "@kaka_ramdhani"
         },
         wanita: {
             nama: "Sri Ina Aristiani",
             panggilan: "Ina",
             orangTua: "Putri Bungsu dari Bapak Herman & Ibu Nuryamah",
-            foto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500",
+            foto: "wanita.jpg",
             instagram: "@iamqueenvanilla"
         }
     },
@@ -45,14 +45,14 @@ const CONFIG = {
     // TIMELINE KISAH CINTA
     loveStory: [
         {
-            year: "2021",
+            year: "2024",
             title: "Awal Pertemuan",
-            description: "Takdir mempertemukan kami di sebuah acara perkuliahan. Dari sapaan sederhana hingga menjadi teman diskusi yang hangat."
+            description: "Takdir mempertemukan kami di sebuah tempat. Dari sapaan sederhana hingga menjadi teman diskusi yang hangat."
         },
         {
-            year: "2023",
-            title: "Mengikat Janji Komitmen",
-            description: "Memutuskan untuk melangkah bersama, saling mendukung dalam suka dan duka, serta membangun impian masa depan."
+            year: "2024 - 2026",
+            title: "Menjalin Hubungan",
+            description: "Memutuskan untuk melangkah bersama, saling memahami satu sama lain, serta membangun impian masa depan."
         },
         {
             year: "2026",
@@ -91,7 +91,7 @@ const CONFIG = {
     bankAccounts: [
         { 
             bank: "BCA", 
-            icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/BANK_BCA_LOGO.svg",
+            icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg",
             number: "1234567890", 
             owner: "Muhammad Adzka Ramdhani" 
         },
