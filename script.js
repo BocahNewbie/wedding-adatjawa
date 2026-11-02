@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const p = CONFIG.wedding.pria;
             const w = CONFIG.wedding.wanita;
             
-            // Nama Panggilan dengan Kaligrafi Estetik
             if (coverHeading) coverHeading.innerHTML = `<span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-xl">&amp;</span> <span class="font-script text-4xl sm:text-5xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
             if (heroHeading) heroHeading.innerHTML = `<span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${p.panggilan || p.nama.split(',')[0]}</span> <span class="text-amber-600 font-serif text-2xl">&amp;</span> <span class="font-script text-4xl sm:text-6xl font-normal text-amber-700 block my-1">${w.panggilan || w.nama.split(',')[0]}</span>`;
 
@@ -76,19 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Render Perjalanan Cinta (Love Story)
+        // Render Perjalanan Cinta (Story Timeline)
         const storyContainer = document.getElementById('story-container');
         if (storyContainer && CONFIG.loveStory) {
-            storyContainer.innerHTML = '';
-            CONFIG.loveStory.forEach((item, idx) => {
+            storyContainer.innerHTML = '<div id="journey-line" class="absolute top-0 left-[-2px] w-[2px] bg-gradient-to-b from-amber-600 via-amber-400 to-red-900 transition-all duration-300 ease-out h-0"></div>';
+            CONFIG.loveStory.forEach((item) => {
                 const card = document.createElement('div');
-                card.className = 'bg-amber-50/90 border border-amber-600/30 p-6 rounded-2xl shadow-md space-y-2 relative overflow-hidden group hover:shadow-lg transition-all';
+                card.className = 'relative pl-2 space-y-2 group';
                 card.innerHTML = `
-                    <div class="flex items-center space-x-3 border-b border-amber-600/20 pb-2">
-                        <span class="px-3 py-1 bg-red-900 text-amber-200 text-xs font-bold rounded-full shadow-sm">${item.year}</span>
-                        <h3 class="font-serif text-lg font-bold text-red-950">${item.title}</h3>
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-100 border-2 border-amber-600 flex items-center justify-center shadow-sm group-hover:scale-125 transition-transform">
+                        <div class="w-1.5 h-1.5 rounded-full bg-red-900"></div>
                     </div>
-                    <p class="text-xs text-stone-600 leading-relaxed pt-1">${item.description}</p>
+                    <div class="bg-amber-50/90 border border-amber-600/30 p-5 rounded-2xl shadow-md hover:shadow-lg transition-all space-y-2">
+                        <span class="px-3 py-1 bg-red-900 text-amber-200 text-xs font-bold rounded-full shadow-sm inline-block">${item.year}</span>
+                        <h3 class="font-serif text-lg font-bold text-red-950">${item.title}</h3>
+                        <p class="text-xs text-stone-600 leading-relaxed pt-1">${item.description}</p>
+                    </div>
                 `;
                 storyContainer.appendChild(card);
             });
@@ -113,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Render Galeri Foto dengan Modal Lightbox
+        // Render Galeri Foto
         const galleryGrid = document.getElementById('gallery-grid');
         if (galleryGrid && CONFIG.gallery) {
             galleryGrid.innerHTML = '';
@@ -153,6 +155,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Interactive Scroll Journey Line Effect
+    window.addEventListener('scroll', () => {
+        const storyContainer = document.getElementById('story-container');
+        const journeyLine = document.getElementById('journey-line');
+        if (storyContainer && journeyLine) {
+            const rect = storyContainer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const totalHeight = rect.height;
+                const visibleHeight = windowHeight - rect.top;
+                const progress = Math.min(Math.max(visibleHeight / totalHeight, 0), 1);
+                journeyLine.style.height = `${progress * 100}%`;
+            }
+        }
+    });
+
+    // Smooth Transition saat Buka Undangan
+    const btnOpen = document.getElementById('btn-open');
+    const audio = document.getElementById('wedding-audio');
+    const audioControl = document.getElementById('audio-control');
+    const audioIcon = document.getElementById('audio-icon');
+    let isPlaying = false;
+
+    if (btnOpen) {
+        btnOpen.addEventListener('click', () => {
+            const cover = document.getElementById('sec-cover');
+            const mainContent = document.getElementById('main-content');
+            
+            if (cover) {
+                cover.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+            }
+            
+            setTimeout(() => {
+                if (cover) cover.style.display = 'none';
+                if (mainContent) {
+                    mainContent.classList.remove('hidden');
+                    setTimeout(() => mainContent.classList.remove('opacity-0'), 50);
+                }
+                if (audioControl) audioControl.classList.remove('hidden');
+            }, 800);
+
+            if (audio) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    if (audioIcon) audioIcon.classList.add('spin-slow');
+                }).catch(err => console.log("Autoplay diblokir browser:", err));
+            }
+        });
+    }
+
+    if (audioControl) {
+        audioControl.addEventListener('click', () => {
+            if (!audio) return;
+            if (isPlaying) {
+                audio.pause();
+                if (audioIcon) audioIcon.classList.remove('spin-slow');
+            } else {
+                audio.play();
+                if (audioIcon) audioIcon.classList.add('spin-slow');
+            }
+            isPlaying = !isPlaying;
+        });
+    }
+
     // Modal Lightbox Handlers
     const modal = document.getElementById('gallery-modal');
     const modalImg = document.getElementById('modal-img');
@@ -179,55 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }
-        });
-    }
-
-    // Nama Tamu Dinamis
-    const urlParams = new URLSearchParams(window.location.search);
-    const guestParam = urlParams.get('to');
-    if (guestParam) {
-        if (document.getElementById('guest-name')) document.getElementById('guest-name').innerText = guestParam;
-        if (document.getElementById('input-name')) document.getElementById('input-name').value = guestParam;
-    }
-
-    // Buka Undangan & Audio
-    const btnOpen = document.getElementById('btn-open');
-    const audio = document.getElementById('wedding-audio');
-    const audioControl = document.getElementById('audio-control');
-    const audioIcon = document.getElementById('audio-icon');
-    let isPlaying = false;
-
-    if (btnOpen) {
-        btnOpen.addEventListener('click', () => {
-            const cover = document.getElementById('sec-cover');
-            if (cover) cover.classList.add('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                if (cover) cover.style.display = 'none';
-                const mainContent = document.getElementById('main-content');
-                if (mainContent) mainContent.classList.remove('hidden');
-                if (audioControl) audioControl.classList.remove('hidden');
-            }, 1000);
-
-            if (audio) {
-                audio.play().then(() => {
-                    isPlaying = true;
-                    if (audioIcon) audioIcon.classList.add('spin-slow');
-                }).catch(err => console.log("Autoplay diblokir browser:", err));
-            }
-        });
-    }
-
-    if (audioControl) {
-        audioControl.addEventListener('click', () => {
-            if (!audio) return;
-            if (isPlaying) {
-                audio.pause();
-                if (audioIcon) audioIcon.classList.remove('spin-slow');
-            } else {
-                audio.play();
-                if (audioIcon) audioIcon.classList.add('spin-slow');
-            }
-            isPlaying = !isPlaying;
         });
     }
 
