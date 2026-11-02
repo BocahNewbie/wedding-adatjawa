@@ -28,7 +28,7 @@ const CONFIG = {
         galeri: "",
         amplop: "",
         rsvp: "",
-        thanks: ""
+        thanks: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200" // Tambahkan URL foto background di sini
     },
 
     wedding: {
