@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'sec-hero': CONFIG.backgrounds?.hero,
             'sec-quote': CONFIG.backgrounds?.quote,
             'sec-mempelai': CONFIG.backgrounds?.mempelai,
+            'sec-story': CONFIG.backgrounds?.story,
             'sec-acara': CONFIG.backgrounds?.acara,
             'sec-galeri': CONFIG.backgrounds?.galeri,
             'sec-amplop': CONFIG.backgrounds?.amplop,
@@ -73,6 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
             }
+        }
+
+        // Render Perjalanan Cinta (Love Story)
+        const storyContainer = document.getElementById('story-container');
+        if (storyContainer && CONFIG.loveStory) {
+            storyContainer.innerHTML = '';
+            CONFIG.loveStory.forEach((item, idx) => {
+                const card = document.createElement('div');
+                card.className = 'bg-amber-50/90 border border-amber-600/30 p-6 rounded-2xl shadow-md space-y-2 relative overflow-hidden group hover:shadow-lg transition-all';
+                card.innerHTML = `
+                    <div class="flex items-center space-x-3 border-b border-amber-600/20 pb-2">
+                        <span class="px-3 py-1 bg-red-900 text-amber-200 text-xs font-bold rounded-full shadow-sm">${item.year}</span>
+                        <h3 class="font-serif text-lg font-bold text-red-950">${item.title}</h3>
+                    </div>
+                    <p class="text-xs text-stone-600 leading-relaxed pt-1">${item.description}</p>
+                `;
+                storyContainer.appendChild(card);
+            });
         }
 
         // Render Jadwal Acara
