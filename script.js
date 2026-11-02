@@ -288,7 +288,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (document.getElementById('hours')) document.getElementById('hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
                 if (document.getElementById('minutes')) document.getElementById('minutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
                 if (document.getElementById('seconds')) document.getElementById('seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
-            }
+            },
+            // Render Teks Ucapan Terima Kasih dari CONFIG
+if (CONFIG.thanks) {
+    if (document.getElementById('thanks-title')) document.getElementById('thanks-title').innerText = CONFIG.thanks.title || 'Maturnuwun';
+    if (document.getElementById('thanks-message')) document.getElementById('thanks-message').innerText = CONFIG.thanks.message;
+    if (document.getElementById('thanks-subtext')) document.getElementById('thanks-subtext').innerText = CONFIG.thanks.subtext;
+    if (document.getElementById('thanks-family')) document.getElementById('thanks-family').innerText = CONFIG.thanks.family;
+}
         }, 1000);
     }
 
