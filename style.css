@@ -18,17 +18,20 @@ html {
     background: #d4af37;
 }
 
-/* BACKGROUND PATTERN BATIK KAWUNG MURNI (TANPA FOTO / TANPA URL EXTERNAL) */
+/* BACKGROUND PATTERN BATIK KAWUNG MURNI */
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #3b0910;
-    /* Pattern Batik Kawung SVG Injected */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.12'%3E%3Cpath d='M40 0C25 15 25 25 40 40C25 55 25 65 40 80C55 65 55 55 40 40C55 25 55 15 40 0Z'/%3E%3Cpath d='M0 40C15 25 25 25 40 40C25 55 15 55 0 40Z'/%3E%3Cpath d='M40 40C55 25 65 25 80 40C65 55 55 55 40 40Z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
 }
 
 h1, h2, h3, .font-serif {
     font-family: 'Cinzel Decorative', 'Cinzel', serif;
+}
+
+.font-script {
+    font-family: 'Great Vibes', cursive;
 }
 
 /* FRAME LENGKUNG ARCH JAWA DYNASTY */
@@ -51,12 +54,42 @@ h1, h2, h3, .font-serif {
     -webkit-text-fill-color: transparent;
 }
 
-/* ANIMASI MELAYANG */
+/* EFEK KILAU SHIMMER TOMBOL */
+.btn-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.25) 50%,
+        transparent 70%
+    );
+    transform: rotate(30deg) translateX(-100%);
+    animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: rotate(30deg) translateX(100%);
+    }
+}
+
+/* ANIMASI MELAYANG & PUTAR */
 @keyframes floatAnimation {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
+
 .float-item {
     animation: floatAnimation 4s ease-in-out infinite;
 }
@@ -64,6 +97,7 @@ h1, h2, h3, .font-serif {
 .spin-slow {
     animation: spin 6s linear infinite;
 }
+
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -92,7 +126,7 @@ h1, h2, h3, .font-serif {
 }
 
 .envelope-box:hover {
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
 }
 
 .envelope-card-content {
