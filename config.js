@@ -91,7 +91,7 @@ const CONFIG = {
     bankAccounts: [
         { 
             bank: "BCA", 
-            icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/BANK_BCA_LOGO.svg",
+            icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg",
             number: "1234567890", 
             owner: "Muhammad Adzka Ramdhani" 
         },
