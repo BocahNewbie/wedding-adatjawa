@@ -34,7 +34,7 @@ h1, h2, h3, .font-serif {
     font-family: 'Great Vibes', cursive;
 }
 
-/* FRAME LENGKUNG JAWA DYNASTY (WITH GROUNDING BRIDGES) */
+/* FRAME LENGKUNG JAWA DYNASTY */
 .java-arch-card {
     background: rgba(253, 248, 240, 0.96);
     border: 2px solid #d4af37;
@@ -47,32 +47,46 @@ h1, h2, h3, .font-serif {
         inset 0 0 0 4px rgba(212, 175, 55, 0.15);
 }
 
-/* JEMBATAN ORNAMEN UNTUK ELEGAN & TERTANCAP */
-.java-arch-card::before,
-.java-arch-card::after {
-    content: '◆';
-    color: #d4af37;
-    font-size: 10px;
+/* JEMBATAN CONNECTOR GLASSMORPHISM ANTAR SECTION CARD (SOLUSI MELAYANG) */
+section.relative:not(:last-of-type)::after {
+    content: '';
     position: absolute;
+    bottom: -64px;
     left: 50%;
     transform: translateX(-50%);
+    width: 3px;
+    height: 64px;
+    background: linear-gradient(
+        180deg, 
+        rgba(212, 175, 55, 0.9) 0%, 
+        rgba(133, 24, 32, 0.4) 50%, 
+        rgba(212, 175, 55, 0.9) 100%
+    );
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    z-index: 15;
+}
+
+/* ACCENT ORNAMEN DI TENGAH JEMBATAN CONNECTOR */
+section.relative:not(:last-of-type)::before {
+    content: '❖';
+    font-size: 10px;
+    color: #d4af37;
+    position: absolute;
+    bottom: -43px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background: rgba(59, 9, 16, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(212, 175, 55, 0.7);
+    border-radius: 50%;
     display: flex;
-    items-center: center;
+    align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 16px;
-    background: #3b0910;
-    border: 1px solid #d4af37;
-    border-radius: 999px;
-    z-index: 20;
-}
-
-.java-arch-card::before {
-    top: -9px;
-}
-
-.java-arch-card::after {
-    bottom: -9px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    z-index: 16;
 }
 
 /* EFEK TULISAN NEON EMAS */
@@ -180,45 +194,4 @@ h1, h2, h3, .font-serif {
 .envelope-container.open .envelope-icon {
     transform: rotate(180deg);
     color: #d4af37;
-}
-
-/* EFEK JEMBATAN GLASSMORPHISM CONNECTOR ANTAR CARD */
-section.relative:not(:last-of-type)::after {
-    content: '';
-    position: absolute;
-    bottom: -64px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3px;
-    height: 64px;
-    background: linear-gradient(
-        180deg, 
-        rgba(212, 175, 55, 0.8) 0%, 
-        rgba(133, 24, 32, 0.4) 50%, 
-        rgba(212, 175, 55, 0.8) 100%
-    );
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
-    z-index: 15;
-}
-
-/* ORNAMEN SIMBOL DI TENGAH JEMBATAN CONNECTOR */
-section.relative:not(:last-of-type)::before {
-    content: '❖';
-    font-size: 10px;
-    color: #d4af37;
-    position: absolute;
-    bottom: -38px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 22px;
-    height: 22px;
-    background: rgba(59, 9, 16, 0.85);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(212, 175, 55, 0.6);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 16;
 }
