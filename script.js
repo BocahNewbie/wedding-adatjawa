@@ -1,31 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. INTEGRASI CONFIG & TAMPILAN UTAMA
     if (typeof CONFIG !== 'undefined') {
-        // Tambahkan di dalam fungsi rendering background script.js:
-        const bgMap = {
-            'sec-cover': CONFIG.backgrounds?.cover,
-            'sec-hero': CONFIG.backgrounds?.hero,
-            'sec-quote': CONFIG.backgrounds?.quote,
-            'sec-mempelai': CONFIG.backgrounds?.mempelai,
-            'sec-story': CONFIG.backgrounds?.story,
-            'sec-acara': CONFIG.backgrounds?.acara,
-            'sec-galeri': CONFIG.backgrounds?.galeri,
-            'sec-amplop': CONFIG.backgrounds?.amplop,
-            'sec-rsvp': CONFIG.backgrounds?.rsvp,
-            'sec-thanks': CONFIG.backgrounds?.thanks
-        };
-
-        // Pasang background khusus pada kartu terima kasih jika ada:
-        const thanksCardBg = document.getElementById('thanks-bg-card');
-        if (thanksCardBg && CONFIG.backgrounds?.thanks) {
-            thanksCardBg.style.backgroundImage = `url('${CONFIG.backgrounds.thanks}')`;
-        }
-        
-        for (const [id, url] of Object.entries(bgMap)) {
-            const el = document.getElementById(id);
-            if (el && url) el.style.backgroundImage = `url('${url}')`;
-        }
-
         if (document.getElementById('cover-title-tag')) document.getElementById('cover-title-tag').innerText = CONFIG.event.title;
         if (document.getElementById('hero-tag')) document.getElementById('hero-tag').innerText = CONFIG.event.title;
         if (document.getElementById('hero-date')) document.getElementById('hero-date').innerText = CONFIG.event.dateText;
@@ -39,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return `https://instagram.com/${cleanHandle}`;
         };
 
-        // Render Profile Mempelai Jawa Dynasty (Simetris 100%)
+        // Render Profile Mempelai Jawa Dynasty
         const coverHeading = document.getElementById('cover-heading');
         const heroHeading = document.getElementById('hero-heading');
         const thanksCouples = document.getElementById('thanks-couples');
@@ -182,6 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 bankContainer.appendChild(el);
             });
         }
+
+        // Render Teks Ucapan Terima Kasih dari CONFIG
+        if (CONFIG.thanks) {
+            if (document.getElementById('thanks-title')) document.getElementById('thanks-title').innerText = CONFIG.thanks.title || 'Maturnuwun';
+            if (document.getElementById('thanks-message')) document.getElementById('thanks-message').innerText = CONFIG.thanks.message;
+            if (document.getElementById('thanks-subtext')) document.getElementById('thanks-subtext').innerText = CONFIG.thanks.subtext;
+            if (document.getElementById('thanks-family')) document.getElementById('thanks-family').innerText = CONFIG.thanks.family;
+        }
     }
 
     // Interactive Scroll Journey Line Effect
@@ -200,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth Transition saat Buka Undangan
+    // Buka Undangan & Play Audio
     const btnOpen = document.getElementById('btn-open');
     const audio = document.getElementById('wedding-audio');
     const audioControl = document.getElementById('audio-control');
@@ -297,17 +280,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (document.getElementById('minutes')) document.getElementById('minutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
                 if (document.getElementById('seconds')) document.getElementById('seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
             }
-            // Render Teks Ucapan Terima Kasih dari CONFIG
-if (CONFIG.thanks) {
-    if (document.getElementById('thanks-title')) document.getElementById('thanks-title').innerText = CONFIG.thanks.title || 'Maturnuwun';
-    if (document.getElementById('thanks-message')) document.getElementById('thanks-message').innerText = CONFIG.thanks.message;
-    if (document.getElementById('thanks-subtext')) document.getElementById('thanks-subtext').innerText = CONFIG.thanks.subtext;
-    if (document.getElementById('thanks-family')) document.getElementById('thanks-family').innerText = CONFIG.thanks.family;
-}
         }, 1000);
     }
 
-    // Fetch Comments
+    // Fetch & Post Comments (Google Sheets Integration)
     const rsvpForm = document.getElementById('rsvp-form');
     const commentsContainer = document.getElementById('comments-container');
 
