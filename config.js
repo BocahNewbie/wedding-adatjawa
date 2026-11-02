@@ -10,7 +10,13 @@ const CONFIG = {
         mapsUrl: "https://maps.google.com"
     },
 
-    // TEKS UCAPAN TERIMA KASIH (BISA DIUBAH BEBAS DI SINI)
+    // KELOLA SEMUA BACKGROUND & GAMBAR DI SINI
+    backgrounds: {
+        // Background utama global (bisa berupa URL foto/gambar atau SVG Data-URI pattern)
+        globalPattern: "https://unsplash.com/id/foto/seorang-pengantin-berjalan-di-atas-bukit-IfjHaIoAoqE"
+    },
+
+    // TEKS UCAPAN TERIMA KASIH
     thanks: {
         title: "Maturnuwun",
         message: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.",
@@ -18,22 +24,10 @@ const CONFIG = {
         family: "Beserta Keluarga Besar"
     },
 
-    backgrounds: {
-        cover: "",
-        hero: "",
-        quote: "",
-        mempelai: "",
-        story: "",
-        acara: "",
-        galeri: "",
-        amplop: "",
-        rsvp: "",
-        thanks: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200" // Tambahkan URL foto background di sini
-    },
-
+    // DATA MEMPELAI & FOTO PROFIL
     wedding: {
         pria: {
-            nama: "M. Adzka Ramdhani, S.E., M.M.",
+            nama: "M. Adzka Ramdhani",
             panggilan: "Adzka",
             orangTua: "Putra Pertama dari Bapak Kamaludin & Ibu Dra. Ida Srinurwenda",
             foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500",
@@ -42,12 +36,13 @@ const CONFIG = {
         wanita: {
             nama: "Sri Ina Aristiani",
             panggilan: "Ina",
-            orangTua: "Putri Bungsu dari Bapak Nama Ayah & Ibu Nama Ibu",
+            orangTua: "Putri Bungsu dari Bapak Herman & Ibu Nuryamah",
             foto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500",
             instagram: "@iamqueenvanilla"
         }
     },
 
+    // TIMELINE KISAH CINTA
     loveStory: [
         {
             year: "2021",
@@ -66,6 +61,7 @@ const CONFIG = {
         }
     ],
 
+    // JADWAL ACARA & FOTO LOKASI
     schedules: [
         {
             name: "Akad Nikah",
@@ -83,6 +79,7 @@ const CONFIG = {
         }
     ],
 
+    // GALERI FOTO (BISA TAMBAH ATAU KURANGI LINK DENGAN MUDAH)
     gallery: [
         "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
         "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800",
@@ -90,6 +87,7 @@ const CONFIG = {
         "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800"
     ],
 
+    // LOGO BANK & DETAIL REKENING
     bankAccounts: [
         { 
             bank: "BCA", 
