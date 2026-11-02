@@ -19,11 +19,14 @@ html {
 }
 
 /* BACKGROUND PATTERN BATIK KAWUNG MURNI FIXED GLOBAL */
+/* BACKGROUND UTAMA FIX SATU HALAMAN PENUH */
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #3b0910;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.12'%3E%3Cpath d='M40 0C25 15 25 25 40 40C25 55 25 65 40 80C55 65 55 55 40 0Z'/%3E%3Cpath d='M0 40C15 25 25 25 40 40C25 55 15 55 0 40Z'/%3E%3Cpath d='M40 40C55 25 65 25 80 40C65 55 55 55 40 40Z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3C/g%3E%3C/svg%3E");
-    background-attachment: fixed;
+    background-size: cover;          /* Membuat gambar menutupi seluruh layar */
+    background-position: center;     /* Posisi gambar di tengah */
+    background-repeat: no-repeat;    /* Mencegah gambar berulang / banyak */
+    background-attachment: fixed;    /* Mengunci background agar tidak ikut scroll */
 }
 
 h1, h2, h3, .font-serif {
