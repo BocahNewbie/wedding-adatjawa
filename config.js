@@ -30,14 +30,14 @@ const CONFIG = {
             nama: "M. Adzka Ramdhani",
             panggilan: "Adzka",
             orangTua: "Putra Pertama dari Bapak Kamaludin & Ibu Dra. Ida Srinurwenda",
-            foto: "Pria.jpg",
+            foto: "Pria.jpeg",
             instagram: "@kaka_ramdhani"
         },
         wanita: {
             nama: "Sri Ina Aristiani",
             panggilan: "Ina",
             orangTua: "Putri Bungsu dari Bapak Herman & Ibu Nuryamah",
-            foto: "Wanita.jpg",
+            foto: "Wanita.jpeg",
             instagram: "@iamqueenvanilla"
         }
     },
