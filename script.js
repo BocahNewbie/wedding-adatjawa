@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. MENANGKAP NAMA TAMU DARI URL (Contoh: ?to=Bapak+Budi -> Bapak Budi)
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestParam = urlParams.get('to');
+    const guestNameEl = document.getElementById('guest-name');
+    
+    if (guestNameEl) {
+        if (guestParam) {
+            // Mengubah tanda plus (+) atau %20 menjadi spasi normal
+            const decodedName = decodeURIComponent(guestParam.replace(/\+/g, ' '));
+            guestNameEl.innerText = decodedName;
+        } else {
+            guestNameEl.innerText = "Tamu Undangan";
+        }
+    }
+
     if (typeof CONFIG !== 'undefined') {
         if (CONFIG.backgrounds && CONFIG.backgrounds.globalPattern) {
             document.body.style.backgroundImage = `url('${CONFIG.backgrounds.globalPattern}')`;
@@ -98,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // RENDER JADWAL DENGAN TOMBOL MAPS MASING-MASING
         const schedContainer = document.getElementById('schedule-container');
         if (schedContainer && CONFIG.schedules) {
             schedContainer.innerHTML = '';
